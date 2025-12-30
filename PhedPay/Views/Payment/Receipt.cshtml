@@ -1,0 +1,26 @@
+﻿@model PhedPay.Models.TransactionEntity
+@{
+    ViewData["Title"] = "Payment Successful";
+}
+
+<div class="container mt-5 text-center">
+    <h1 class="text-success">Payment Successful!</h1>
+    <p>Your payment of NGN @Model.Amount has been processed.</p>
+
+    <div class="border p-4 my-4">
+        <h4>Receipt Preview</h4>
+        <p>Transaction ID: @Model.TransactionReference</p>
+        <p>Date: @Model.CreatedDate</p>
+    </div>
+
+    <div>
+        <a asp-action="DownloadReceipt" asp-route-transactionId="@Model.TransactionReference" class="btn btn-primary">
+            Download PDF Receipt
+        </a>
+        <a asp-action="Index" class="btn btn-outline-dark">Back to Home</a>
+    </div>
+
+    <script>
+        // Optional: Auto trigger download or print
+    </script>
+</div>

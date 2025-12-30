@@ -1,0 +1,25 @@
+﻿@model PhedPay.Models.PaymentInitiationViewModel
+@{ ViewData["Title"] = "Pay Bill"; }
+
+<div class="container mt-5">
+    <h2>Pay PHED Electricity Bill</h2>
+    <form asp-action="ValidateCustomer" method="post">
+        <div class="mb-3">
+            <label>Meter Number</label>
+            <input asp-for="MeterNo" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Phone Number</label>
+            <input asp-for="PhoneNumber" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Email</label>
+            <input asp-for="Email" type="email" class="form-control" required />
+        </div>
+        <div class="mb-3">
+            <label>Amount (NGN)</label>
+            <input asp-for="Amount" type="number" class="form-control" required />
+        </div>
+        <button type="submit" class="btn btn-primary">Proceed</button>
+    </form>
+</div>

@@ -1,0 +1,50 @@
+## Build Artifacts
+[Bb]in/
+[Oo]bj/
+*.exe
+*.dll
+*.pdb
+*.cache
+
+## Visual Studio & VS Code
+.vs/
+.vscode/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## User-specific files
+*.rsuser
+*.suo
+*.user
+*.userosscache
+*.sln.docstates
+
+## NuGet
+packages/
+*.nupkg
+
+## Test Results
+TestResults/
+
+## PDF Generation (Specific to your App)
+# Ignore PDFs generated during testing so they don't clutter the repo
+*.pdf
+
+## Environment & Secrets (CRITICAL)
+# Ignore local development settings that might contain your API Keys or DB Passwords
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+# If you create a specific config for your PHED keys, ignore it:
+# mysettings.json
+
+## SQL Server LocalDB
+*.mdf
+*.ldf
+
+## OS Generated
+.DS_Store
+Thumbs.db

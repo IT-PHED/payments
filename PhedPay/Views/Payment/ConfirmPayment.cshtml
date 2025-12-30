@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Confirm Details";
+}
+
+<div class="container mt-5">
+    <div class="card">
+        <div class="card-header bg-info text-white">
+            Customer Details Found
+        </div>
+        <div class="card-body">
+            <p><strong>Name:</strong> @ViewBag.CustomerName</p>
+            <p><strong>Address:</strong> @ViewBag.Address</p>
+            <p><strong>Meter No:</strong> @ViewBag.MeterNo</p>
+            <p><strong>Amount to Pay:</strong> NGN @ViewBag.Amount</p>
+
+            <form asp-action="InitializePayment" method="post">
+                <input type="hidden" name="AccountNo" value="@ViewBag.AccountNo" />
+                <input type="hidden" name="meterNo" value="@ViewBag.MeterNo" />
+                <input type="hidden" name="phone" value="@ViewBag.Phone" />
+                <input type="hidden" name="email" value="@ViewBag.Email" />
+                <input type="hidden" name="amount" value="@ViewBag.Amount" />
+                <input type="hidden" name="customerName" value="@ViewBag.CustomerName" />
+                <input type="hidden" name="address" value="@ViewBag.Address" />
+
+                <button type="submit" class="btn btn-success btn-lg">Pay Now</button>
+                <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</div>
