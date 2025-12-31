@@ -19,8 +19,10 @@ namespace PhedPay.Models
         public string CustomerName { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
+        public bool IsSynced { get; set; }
+        public DateTime? SyncedAt { get; set; }
         public DateTime CreatedDate { get; set; }
-    }   
+    }
 }
 
 

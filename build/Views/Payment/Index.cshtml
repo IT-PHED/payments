@@ -1,0 +1,264 @@
+﻿@model PhedPay.Models.PaymentInitiationViewModel
+@{
+    ViewData["Title"] = "Pay Electricity Bill";
+}
+
+<style>
+    .payment-container {
+        max-width: 992px;
+        margin: 0 auto;
+    }
+
+    .progress-steps {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.5rem;
+        position: relative;
+    }
+
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: #e9ecef;
+            z-index: -1;
+        }
+
+        .progress-steps::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            left: 0;
+            width: 50%;
+            height: 3px;
+            background: var(--primary);
+            z-index: -1;
+            transition: width 0.3s ease;
+        }
+
+    .step {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: white;
+        padding: 0 10px;
+    }
+
+    .step-circle {
+        width: 42px;
+        height: 42px;
+        border-radius: 50%;
+        background: #e9ecef;
+        color: #6c757d;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 600;
+        margin-bottom: 8px;
+        transition: all 0.3s;
+    }
+
+    .step.active .step-circle {
+        background: var(--primary);
+        color: white;
+        box-shadow: 0 0 0 4px rgba(13, 110, 253, 0.1);
+    }
+
+    .step.completed .step-circle {
+        background: #198754;
+        color: white;
+    }
+
+    .step-label {
+        font-size: 0.85rem;
+        font-weight: 500;
+        color: #6c757d;
+        text-align: center;
+    }
+
+    .step.active .step-label {
+        color: var(--primary);
+    }
+
+    .payment-card {
+        border: none;
+        border-radius: 12px;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+    }
+
+    .form-label {
+        font-weight: 600;
+        color: #495057;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+    }
+
+    .form-control, .form-select {
+        border-radius: 8px;
+        border: 1.5px solid #dee2e6;
+        padding: 0.65rem 0.75rem;
+        transition: all 0.2s;
+    }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.1);
+        }
+
+        .form-control.is-invalid {
+            border-color: #dc3545;
+        }
+
+    .submit-btn {
+        border-radius: 8px;
+        padding: 0.75rem;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.2s;
+    }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(13, 110, 253, 0.3);
+        }
+
+    .info-text {
+        font-size: 0.85rem;
+        color: #6c757d;
+        margin-top: 0.25rem;
+    }
+
+    @@media (max-width: 576px) {
+        .step-label
+
+    {
+        font-size: 0.75rem;
+    }
+
+    .step-circle {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
+    }
+
+    }
+</style>
+
+<div class="payment-container">
+    <!-- Progress Steps -->
+    <div class="progress-steps">
+        <div class="step active">
+            <div class="step-circle">1</div>
+            <span class="step-label">Customer Details</span>
+        </div>
+        <div class="step">
+            <div class="step-circle">2</div>
+            <span class="step-label">Review & Payment</span>
+        </div>
+    </div>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @Html.ValidationSummary(false, "", new { @class = "mb-0" })
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
+
+    <!-- Payment Form Card -->
+    <div class="card payment-card">
+        <div class="card-body p-4 p-md-5">
+            <h4 class="mb-2 fw-bold text-primary">Pay PHED Electricity Bill</h4>
+            <p class="text-muted mb-4">Enter your meter and contact details to proceed</p>
+
+            <form asp-action="ValidateCustomer" method="post" class="js-loading-form" novalidate>
+
+                <div class="row g-3">
+                    <!-- Meter Number -->
+                    <div class="col-md-6">
+                        <label asp-for="MeterNo" class="form-label">
+                            Meter Number <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="MeterNo"
+                               class="form-control"
+                               placeholder="45001234567"
+                               maxlength="15"
+                               inputmode="text"
+                               required />
+                        <span asp-validation-for="MeterNo" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="col-md-6">
+                        <label asp-for="PhoneNumber" class="form-label">
+                            Phone Number <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="PhoneNumber"
+                               class="form-control"
+                               placeholder="08012345678"
+                               inputmode="tel"
+                               maxlength="11"
+                               required />
+                        <span asp-validation-for="PhoneNumber" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="col-md-6">
+                        <label asp-for="Email" class="form-label">
+                            Email Address <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="Email"
+                               type="email"
+                               class="form-control"
+                               placeholder="your@email.com"
+                               required />
+                        <span asp-validation-for="Email" class="text-danger small"></span>
+                    </div>
+
+                    <!-- Amount -->
+                    <div class="col-md-6">
+                        <label asp-for="Amount" class="form-label">
+                            Amount (₦) <span class="text-danger">*</span>
+                        </label>
+                        <input asp-for="Amount"
+                               type="number"
+                               class="form-control"
+                               min="100"
+                               step="50"
+                               placeholder="100"
+                               required />
+                        <div class="info-text">Minimum: ₦100</div>
+                        <span asp-validation-for="Amount" class="text-danger small"></span>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary w-100 submit-btn">
+                        <i class="bi bi-shield-check me-2"></i>Validate & Continue
+                        <span class="spinner-border spinner-border-sm d-none"></span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+    <script>
+        // Real-time validation feedback
+        document.querySelectorAll('.form-control').forEach(input => {
+            input.addEventListener('blur', function() {
+                if (this.value.trim() === '') {
+                    this.classList.add('is-invalid');
+                } else {
+                    this.classList.remove('is-invalid');
+                }
+            });
+        });
+    </script>
+}

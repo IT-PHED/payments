@@ -1,0 +1,126 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+:root {
+    --primary: #0d6efd;
+    --sidebar-bg: #f8f9fa;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.navbar-brand img {
+    height: 50px;
+    margin-right: 8px;
+}
+
+.nav-link {
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+    .nav-link:hover {
+        color: white !important;
+        background-color: var(--primary) !important;
+    }
+
+.pay-btn {
+    background: var(--primary);
+    color: #fff !important;
+    border-radius: 6px;
+    padding: 6px 14px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+    .pay-btn:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(13, 110, 253, 0.3);
+    }
+
+.main-wrapper {
+    display: flex;
+    flex: 1;
+    gap: 0;
+}
+
+.sidebar {
+    width: 320px;
+    background: var(--sidebar-bg);
+    border-right: 1px solid #dee2e6;
+    padding: 2rem 1.5rem;
+    overflow-y: auto;
+    order: 1;
+}
+
+    .sidebar h5 {
+        color: var(--primary);
+        font-weight: 600;
+        margin-bottom: 1.5rem;
+    }
+
+.accordion-button:not(.collapsed) {
+    background-color: #e7f1ff;
+    color: var(--primary);
+}
+
+.accordion-button:focus {
+    box-shadow: none;
+    border-color: rgba(13, 110, 253, 0.25);
+}
+
+.accordion-body {
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+.content-area {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+    order: 2;
+}
+
+footer {
+    background: #f8f9fa;
+    margin-top: auto;
+}
+
+@media (max-width: 992px) {
+    .main-wrapper {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        border-right: none;
+        border-top: 1px solid #dee2e6;
+        order: 3;
+    }
+
+    .content-area {
+        order: 2;
+    }
+}
