@@ -3,49 +3,142 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - PhedPay</title>
+    <title>@ViewData["Title"] - Phed Pay</title>
     <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/PhedPay.styles.css" asp-append-version="true" />
+    <style>
+       
+    </style>
 </head>
 <body>
+    <!-- NAVBAR -->
     <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container">
-                <a class="navbar-brand" asp-area="" asp-page="/Index">PhedPay</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+        <nav class="navbar navbar-expand-lg navbar-light bg-white border-bottom shadow-sm sticky-top">
+            <div class="container-fluid px-4">
+                <a class="navbar-brand d-flex align-items-center" asp-page="/Index">
+                    <img src="~/images/logo.png" alt="PhedPay Logo" />
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
+                <div class="collapse navbar-collapse" id="mainNav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Index">Home</a>
+                            <a class="nav-link" asp-page="/">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-page="/Privacy">Privacy</a>
+                            <a class="nav-link" asp-page="/Pay">Pay Energy Bill</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/History">Payment History</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-page="/Meters">My Meters</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="https://map.phed.com.ng">Buy Meter Online</a>
+                        </li>
+                        <li class="nav-item ms-lg-2">
+                            <a class="nav-link pay-btn" asp-page="/Pay">Pay Now</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    <div class="container">
-        <main role="main" class="pb-3">
+
+    <!-- MAIN CONTENT WITH SIDEBAR -->
+    <div class="main-wrapper">
+        <!-- LEFT SIDEBAR -->
+        <aside class="sidebar">
+            <h5><i class="bi bi-question-circle"></i> Payment FAQs</h5>
+            <div class="accordion accordion-flush" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                            How do I pay my bill?
+                        </button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Enter your meter number, select amount, choose payment method (card/bank transfer), and confirm. You'll receive a token instantly via SMS and email.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                            What payment methods are accepted?
+                        </button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            We accept all major debit/credit cards (Visa, Mastercard, Verve), bank transfers, USSD, and mobile money. All transactions are secured with 256-bit encryption.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                            When will I receive my token?
+                        </button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Tokens are generated instantly after successful payment. Check your SMS and email. If not received within 5 minutes, contact support with your transaction reference.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                            Can I get a refund?
+                        </button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Refunds are processed for failed transactions or wrong meter charges within 24-48 hours. Submit a request via Support with your transaction ID and proof of payment.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="accordion-item">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                            Is my payment information secure?
+                        </button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Yes. We use PCI-DSS compliant payment gateways, SSL encryption, and never store your card details. All transactions are monitored for fraud protection.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="content-area" role="main">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2025 - PhedPay - <a asp-area="" asp-page="/Privacy">Privacy</a>
+    <!-- FOOTER -->
+    <footer class="border-top py-4">
+        <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+            <div class="text-muted small">
+                &copy; 2025 <strong>PHED PAYMENTS</strong>
+            </div>
         </div>
     </footer>
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
-
     @await RenderSectionAsync("Scripts", required: false)
 </body>
 </html>
