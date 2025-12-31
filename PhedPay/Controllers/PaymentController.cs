@@ -16,13 +16,15 @@ namespace PhedPay.Controllers
         private readonly AppDbContext _context;
         private readonly PdfService _pdfService;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<PaymentController> _logger;
 
-        public PaymentController(IHttpClientFactory httpClientFactory, AppDbContext context, PdfService pdfService, IConfiguration configuration)
+        public PaymentController(IHttpClientFactory httpClientFactory, AppDbContext context, PdfService pdfService, IConfiguration configuration, ILogger<PaymentController> logger)
         {
             _httpClientFactory = httpClientFactory;
             _context = context;
             _pdfService = pdfService;
             _configuration = configuration;
+            _logger = logger;
         }
 
         // 1. Initial Page
@@ -132,7 +134,7 @@ namespace PhedPay.Controllers
             await _context.SaveChangesAsync();
 
             var client = _httpClientFactory.CreateClient();
-
+            var callBackUrl = _configuration["CALLBACK_URL"];
 
             var payload = new
             {
@@ -142,7 +144,7 @@ namespace PhedPay.Controllers
                 currency  = "NGN",
                 productId  = "1001",
                 productDescription  = "Payment for PHED Energy",
-                callBackUrl= "https://payments.phed.com.ng/Payment/VerifyAndProcess"
+                callBackUrl= callBackUrl,
             };
 
             // 3. Serialize
@@ -199,6 +201,8 @@ namespace PhedPay.Controllers
         [HttpGet]
         public async Task<IActionResult> VerifyAndProcess(string transactionId)
         {
+            _logger.LogInformation("it hits here from {0}", nameof(PaymentController));
+
             if (string.IsNullOrEmpty(transactionId))
             {
                 return BadRequest("No transaction ID provided.");
@@ -209,6 +213,11 @@ namespace PhedPay.Controllers
             .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
 
             if (transaction == null) return NotFound($"Transaction {transactionId} not found in database.");
+
+            //if (transaction.Status == "Success")
+            //{
+            //    return View("Receipt", transaction);
+            //}
 
             // 2. VERIFY PAYMENT (Call XpressPay)
             var client = _httpClientFactory.CreateClient();
@@ -226,15 +235,17 @@ namespace PhedPay.Controllers
             // Deserialize to check status (Assuming same structure as Init response)
             var verifyResult = JsonConvert.DeserializeObject<XpressPayResponse>(verifyResultJson);
 
+            _logger.LogInformation("payload response -- {0}", JsonConvert.SerializeObject(verifyResult));
+
             // 3. CHECK IF SUCCESSFUL
             if (verifyResponse.IsSuccessStatusCode && verifyResult?.responseCode == "00")
             {
+                // 4. NOTIFY PHED BACKEND
+                await NotifyPhedBackend(transaction);
+
                 // Update Local DB
                 transaction.Status = "Success";
                 await _context.SaveChangesAsync();
-
-                // 4. NOTIFY PHED BACKEND
-                await NotifyPhedBackend(transaction);
 
                 // 5. SHOW RECEIPT
                 return View("Receipt", transaction);
@@ -323,12 +334,12 @@ namespace PhedPay.Controllers
                 var errorBody = await resp.Content.ReadAsStringAsync();
 
                 // This will print the actual error from the API to your Visual Studio Output window
-                System.Diagnostics.Debug.WriteLine($"API Error: {errorBody}");
+                _logger.LogInformation("API Error: {0}", errorBody);
 
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"PHED Notification Failed: {ex.Message}");
+                _logger.LogInformation("PHED Notification Failed: {0}", ex.Message);
                 // Log failure to notify PHED, but payment is already successful
             }
         }
