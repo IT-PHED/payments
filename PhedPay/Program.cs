@@ -1,8 +1,11 @@
 using PhedPay.Data;
+using Serilog;
 using PhedPay.Services;
 using Microsoft.EntityFrameworkCore; // Added this using directive for 'UseInMemoryDatabase'
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Host.UseSerilog((context, loggerConfig) => loggerConfig.ReadFrom.Configuration(context.Configuration));
 
 // Add services to the container.
 builder.Services.AddControllersWithViews();
@@ -28,6 +31,10 @@ builder.Services.AddHttpClient("BypassSSL").ConfigurePrimaryHttpMessageHandler((
     };
 });
 
+builder.Services.AddCors(options => options.AddPolicy("AllowAll", builder => builder.AllowAnyOrigin()
+    .AllowAnyHeader()
+    .AllowAnyMethod()));
+
 var app = builder.Build();
 
 app.MapRazorPages();
@@ -38,6 +45,10 @@ if (!app.Environment.IsDevelopment())
     app.UseExceptionHandler("/Home/Error");
     app.UseHsts();
 }
+
+app.UseCors("AllowAll");
+
+app.UseSerilogRequestLogging();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

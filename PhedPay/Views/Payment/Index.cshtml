@@ -159,6 +159,13 @@
             <span class="step-label">Review & Payment</span>
         </div>
     </div>
+    @if (!ViewData.ModelState.IsValid)
+    {
+        <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            @Html.ValidationSummary(false, "", new { @class = "mb-0" })
+            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+        </div>
+    }
 
     <!-- Payment Form Card -->
     <div class="card payment-card">
@@ -166,7 +173,8 @@
             <h4 class="mb-2 fw-bold text-primary">Pay PHED Electricity Bill</h4>
             <p class="text-muted mb-4">Enter your meter and contact details to proceed</p>
 
-            <form asp-action="ValidateCustomer" method="post" novalidate>
+            <form asp-action="ValidateCustomer" method="post" class="js-loading-form" novalidate>
+
                 <div class="row g-3">
                     <!-- Meter Number -->
                     <div class="col-md-6">
@@ -177,7 +185,7 @@
                                class="form-control"
                                placeholder="45001234567"
                                maxlength="15"
-                               inputmode="numeric"
+                               inputmode="text"
                                required />
                         <span asp-validation-for="MeterNo" class="text-danger small"></span>
                     </div>
@@ -230,6 +238,7 @@
                 <div class="mt-4">
                     <button type="submit" class="btn btn-primary w-100 submit-btn">
                         <i class="bi bi-shield-check me-2"></i>Validate & Continue
+                        <span class="spinner-border spinner-border-sm d-none"></span>
                     </button>
                 </div>
 

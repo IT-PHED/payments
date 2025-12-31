@@ -306,7 +306,7 @@
             </div>
 
             <!-- Payment Form -->
-            <form asp-action="InitializePayment" method="post">
+            <form asp-action="InitializePayment" method="post" class="js-loading-form">
                 <input type="hidden" name="AccountNo" value="@ViewBag.AccountNo" />
                 <input type="hidden" name="MeterNo" value="@ViewBag.MeterNo" />
                 <input type="hidden" name="Phone" value="@ViewBag.Phone" />
@@ -318,6 +318,7 @@
                 <div class="d-grid gap-3">
                     <button type="submit" class="btn btn-success submit-btn">
                         <i class="bi bi-credit-card me-2"></i>Proceed to Payment
+                        <span class="spinner-border spinner-border-sm d-none"></span>
                     </button>
                     <a asp-action="Index" class="btn btn-outline-secondary cancel-btn">
                         <i class="bi bi-arrow-left me-2"></i>Go Back

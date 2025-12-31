@@ -1,0 +1,62 @@
+2025-12-31 12:58:22.248 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-31 12:58:23.295 +01:00 [INF] Now listening on: https://localhost:7251
+2025-12-31 12:58:23.303 +01:00 [INF] Now listening on: http://localhost:5214
+2025-12-31 12:58:23.564 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-31 12:58:23.571 +01:00 [INF] Hosting environment: Development
+2025-12-31 12:58:23.576 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2025-12-31 12:58:24.322 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2025-12-31 12:58:24.680 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 12:58:24.892 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2025-12-31 12:58:25.768 +01:00 [INF] Executing ViewResult, running view Index.
+2025-12-31 12:58:26.467 +01:00 [INF] Executed ViewResult - view Index executed in 711.0177ms.
+2025-12-31 12:58:26.498 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - null null
+2025-12-31 12:58:26.519 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-31 12:58:26.520 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2025-12-31 12:58:26.540 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1634.5721ms
+2025-12-31 12:58:26.564 +01:00 [INF] The file /css/site.css was not modified
+2025-12-31 12:58:26.583 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 71.6976ms
+2025-12-31 12:58:26.584 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 12:58:26.595 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - 304 null text/css 100.8422ms
+2025-12-31 12:58:26.660 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 2372.9709ms
+2025-12-31 12:58:26.752 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 233.4232ms
+2025-12-31 13:00:24.993 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-31 13:00:26.192 +01:00 [INF] Now listening on: https://localhost:7251
+2025-12-31 13:00:26.200 +01:00 [INF] Now listening on: http://localhost:5214
+2025-12-31 13:00:26.448 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-31 13:00:26.454 +01:00 [INF] Hosting environment: Development
+2025-12-31 13:00:26.458 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2025-12-31 13:00:27.375 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2025-12-31 13:00:27.712 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 13:00:27.871 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2025-12-31 13:00:28.702 +01:00 [INF] Executing ViewResult, running view Index.
+2025-12-31 13:00:29.397 +01:00 [INF] Executed ViewResult - view Index executed in 702.0998ms.
+2025-12-31 13:00:29.422 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1538.3762ms
+2025-12-31 13:00:29.426 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-31 13:00:29.426 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2025-12-31 13:00:29.433 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 13:00:29.535 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 107.7742ms
+2025-12-31 13:00:29.553 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 2214.8171ms
+2025-12-31 13:00:29.680 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 254.8856ms
+2025-12-31 13:17:59.370 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-31 13:18:00.853 +01:00 [INF] Now listening on: https://localhost:7251
+2025-12-31 13:18:00.860 +01:00 [INF] Now listening on: http://localhost:5214
+2025-12-31 13:18:01.110 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-31 13:18:01.115 +01:00 [INF] Hosting environment: Development
+2025-12-31 13:18:01.119 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2025-12-31 13:18:02.118 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2025-12-31 13:18:02.490 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 13:18:02.589 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2025-12-31 13:18:03.499 +01:00 [INF] Executing ViewResult, running view Index.
+2025-12-31 13:18:04.258 +01:00 [INF] Executed ViewResult - view Index executed in 771.0853ms.
+2025-12-31 13:18:04.286 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - null null
+2025-12-31 13:18:04.301 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2025-12-31 13:18:04.285 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-31 13:18:04.369 +01:00 [INF] The file /css/site.css was not modified
+2025-12-31 13:18:04.344 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1740.974ms
+2025-12-31 13:18:04.502 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 13:18:04.501 +01:00 [INF] HTTP GET /css/site.css responded 304 in 95.0124 ms
+2025-12-31 13:18:04.509 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 222.9365ms
+2025-12-31 13:18:04.518 +01:00 [INF] HTTP GET / responded 200 in 2136.4522 ms
+2025-12-31 13:18:04.539 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - 304 null text/css 255.5609ms
+2025-12-31 13:18:04.586 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 2507.009ms
+2025-12-31 13:18:04.628 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 339.2717ms

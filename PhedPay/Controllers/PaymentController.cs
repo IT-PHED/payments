@@ -142,7 +142,7 @@ namespace PhedPay.Controllers
                 currency  = "NGN",
                 productId  = "1001",
                 productDescription  = "Payment for PHED Energy",
-                callBackUrl= "https://localhost:7251/Payment/VerifyAndProcess"
+                callBackUrl= "https://payments.phed.com.ng/Payment/VerifyAndProcess"
             };
 
             // 3. Serialize
