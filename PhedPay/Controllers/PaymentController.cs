@@ -1,5 +1,4 @@
-﻿using Azure;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Newtonsoft.Json;
 using PhedPay.Data;
@@ -16,13 +15,15 @@ namespace PhedPay.Controllers
         private readonly AppDbContext _context;
         private readonly PdfService _pdfService;
         private readonly IConfiguration _configuration;
+        private readonly ILogger<PaymentController> _logger;
 
-        public PaymentController(IHttpClientFactory httpClientFactory, AppDbContext context, PdfService pdfService, IConfiguration configuration)
+        public PaymentController(IHttpClientFactory httpClientFactory, AppDbContext context, PdfService pdfService, IConfiguration configuration, ILogger<PaymentController> logger)
         {
             _httpClientFactory = httpClientFactory;
             _context = context;
             _pdfService = pdfService;
             _configuration = configuration;
+            _logger = logger;
         }
 
         // 1. Initial Page
@@ -56,7 +57,7 @@ namespace PhedPay.Controllers
             string endpoint = $"{baseUrl}Collection/GetcustomerInfo";
 
             var response = await client.PostAsync(endpoint, content);
-          
+
 
             if (response.IsSuccessStatusCode)
             {
@@ -102,7 +103,7 @@ namespace PhedPay.Controllers
                     return View("ConfirmPayment");
                 }
             }
-             ModelState.AddModelError("", "Could not validate customer details.");
+            ModelState.AddModelError("", "Could not validate customer details.");
             return View("Index", model);
         }
         // 3. Initialize Payment (Proceed clicked)
@@ -120,6 +121,7 @@ namespace PhedPay.Controllers
                 TransactionReference = txId, // Store the "Account_Time" here
                 AccountNo = AccountNo,
                 MeterNo = meterNo,
+                RefId = Guid.NewGuid(),
                 Email = email,
                 Phone = phone,
                 Amount = amount,
@@ -132,17 +134,17 @@ namespace PhedPay.Controllers
             await _context.SaveChangesAsync();
 
             var client = _httpClientFactory.CreateClient();
-
+            var callBackUrl = _configuration["CALLBACK_URL"];
 
             var payload = new
             {
                 amount = amount.ToString(),  // Send as number (e.g., 500.00). If API fails, change to: amount.ToString()
                 email = email,
                 transactionId = txId,
-                currency  = "NGN",
-                productId  = "1001",
-                productDescription  = "Payment for PHED Energy",
-                callBackUrl= "https://localhost:7251/Payment/VerifyAndProcess"
+                currency = "NGN",
+                productId = "1001",
+                productDescription = "Payment for PHED Energy",
+                callBackUrl = callBackUrl,
             };
 
             // 3. Serialize
@@ -184,7 +186,7 @@ namespace PhedPay.Controllers
                 var errorBody = await response.Content.ReadAsStringAsync();
 
                 // This will print the actual error from the API to your Visual Studio Output window
-                System.Diagnostics.Debug.WriteLine($"API Error: {errorBody}");
+                _logger.LogInformation($"API Error: {0}", errorBody);
 
                 // Return the error to the view so you can see it in the browser
                 ModelState.AddModelError("", $"Payment Failed: {errorBody}");
@@ -195,10 +197,12 @@ namespace PhedPay.Controllers
         }
 
         // 4. Success / Callback Handler
-      
+
         [HttpGet]
         public async Task<IActionResult> VerifyAndProcess(string transactionId)
         {
+            _logger.LogInformation("it hits here from {0}", nameof(PaymentController));
+
             if (string.IsNullOrEmpty(transactionId))
             {
                 return BadRequest("No transaction ID provided.");
@@ -209,6 +213,11 @@ namespace PhedPay.Controllers
             .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
 
             if (transaction == null) return NotFound($"Transaction {transactionId} not found in database.");
+
+            //if (transaction.Status == "Success")
+            //{
+            //    return View("Receipt", transaction);
+            //}
 
             // 2. VERIFY PAYMENT (Call XpressPay)
             var client = _httpClientFactory.CreateClient();
@@ -226,18 +235,21 @@ namespace PhedPay.Controllers
             // Deserialize to check status (Assuming same structure as Init response)
             var verifyResult = JsonConvert.DeserializeObject<XpressPayResponse>(verifyResultJson);
 
+            _logger.LogInformation("payload response -- {0}", JsonConvert.SerializeObject(verifyResult));
+
             // 3. CHECK IF SUCCESSFUL
             if (verifyResponse.IsSuccessStatusCode && verifyResult?.responseCode == "00")
             {
+                // 4. NOTIFY PHED BACKEND
+                //await NotifyPhedBackend(transaction);
+
                 // Update Local DB
                 transaction.Status = "Success";
                 await _context.SaveChangesAsync();
 
-                // 4. NOTIFY PHED BACKEND
-                await NotifyPhedBackend(transaction);
-
                 // 5. SHOW RECEIPT
-                return View("Receipt", transaction);
+                //return View("Receipt", transaction);
+                return RedirectToAction("Receipt", new { id = transaction.RefId });
             }
             else
             {
@@ -257,8 +269,8 @@ namespace PhedPay.Controllers
 
             var notifyPayload = new PhedNotificationRequest
             {
-                Username= _configuration["api_username"],
-                apikey= _configuration["apikey"],
+                Username = _configuration["api_username"],
+                apikey = _configuration["apikey"],
 
 
 
@@ -272,12 +284,12 @@ namespace PhedPay.Controllers
                 PaymentReference = tx.TransactionReference ?? "",
                 TerminalID = "WebTerminal",
                 ChannelName = "WEB",
-    
+
                 // CRITICAL FIX: Send "" instead of null
                 Location = "",
 
                 PaymentDate = now, // Ensure 'now' is "dd-MM-yyyy HH:mm:ss"
-    
+
                 // CRITICAL FIX: These caused the crash likely
                 InstitutionId = "",
                 InstitutionName = "",
@@ -285,7 +297,7 @@ namespace PhedPay.Controllers
                 BankName = "PHED WEB",
                 BranchName = "PHED WEB",
                 CustomerName = tx.CustomerName ?? "Unknown",
-    
+
                 // CRITICAL FIX: Send "" instead of null
                 OtherCustomerInfo = "",
 
@@ -301,18 +313,18 @@ namespace PhedPay.Controllers
                 ItemCode = "01",
                 ItemAmount = tx.Amount.ToString("0.00"),
                 PaymentStatus = "Success",
-    
+
                 // CRITICAL FIX: Send string "False", not null
                 IsReversal = "False",
 
                 SettlementDate = now,
                 Teller = "PHED WebTeller"
             };
-          
+
 
             var content = new StringContent(JsonConvert.SerializeObject(notifyPayload), Encoding.UTF8, "application/json");
 
-            
+
             try
             {
                 string baseUrl = _configuration["baseAPI"];
@@ -323,12 +335,12 @@ namespace PhedPay.Controllers
                 var errorBody = await resp.Content.ReadAsStringAsync();
 
                 // This will print the actual error from the API to your Visual Studio Output window
-                System.Diagnostics.Debug.WriteLine($"API Error: {errorBody}");
+                _logger.LogInformation("API Error: {0}", errorBody);
 
             }
             catch (Exception ex)
             {
-                System.Diagnostics.Debug.WriteLine($"PHED Notification Failed: {ex.Message}");
+                _logger.LogInformation("PHED Notification Failed: {0}", ex.Message);
                 // Log failure to notify PHED, but payment is already successful
             }
             return;
@@ -429,6 +441,7 @@ namespace PhedPay.Controllers
                 Username = _configuration["api_username"],
                 apikey = _configuration["apikey"],
                 TransactionNo = transactionId // Use the ID stored in DB: "824111122001_124024985083"
+
             };
 
             var content = new StringContent(JsonConvert.SerializeObject(requestPayload), Encoding.UTF8, "application/json");
@@ -465,8 +478,41 @@ namespace PhedPay.Controllers
 
             return BadRequest("Could not retrieve receipt from PHED. Please contact support.");
         }
+
+        [HttpGet]
+        public async Task<IActionResult> Receipt(Guid id)
+        {
+            try
+            {
+                var transaction = await _context.Transactions.FirstOrDefaultAsync(t => t.RefId == id);
+
+                if (transaction == null)
+                    return NotFound();
+
+                if (!transaction.IsSynced && transaction.Status == "Success")
+                {
+                    // Notify PHED backend
+                    await NotifyPhedBackend(transaction);
+
+                    // Update sync status
+                    transaction.IsSynced = true;
+                    transaction.SyncedAt = DateTime.UtcNow;
+                    await _context.SaveChangesAsync();
+                }
+
+                return View(transaction);
+            }
+            catch (Exception ex)
+            {
+                // Log error but still show receipt
+                _logger.LogError(ex, "Error notifying PHED backend for transaction {TransactionId}", id);
+
+                // Get transaction without sync attempt
+                var transaction = await _context.Transactions.FindAsync(id);
+                return View(transaction);
+            }
+        }
     }
 }
 
 
- 

@@ -9,8 +9,11 @@ namespace PhedPay.Models
         [Key] // This is now the Auto-Increment ID
         public int Id { get; set; }
         public string TransactionReference { get; set; }
-        public Guid GlobalId { get; set; }
+        public Guid GlobalId { get; set; } = Guid.NewGuid();
 
+        [Column("RefId", TypeName = "uniqueidentifier")]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Guid RefId { get; set; } = Guid.NewGuid();
         public string MeterNo { get; set; }
         public string AccountNo { get; set; }
         public string Email { get; set; }
@@ -19,8 +22,10 @@ namespace PhedPay.Models
         public string CustomerName { get; set; }
         public string Address { get; set; }
         public string Status { get; set; }
+        public bool IsSynced { get; set; }
+        public DateTime? SyncedAt { get; set; }
         public DateTime CreatedDate { get; set; }
-    }   
+    }
 }
 
 
