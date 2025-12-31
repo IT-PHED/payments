@@ -3061,3 +3061,62 @@ WHERE [p].[TransactionReference] = @__transactionId_0
 2025-12-31 15:39:30.045 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.DownloadReceipt (PhedPay)'
 2025-12-31 15:39:30.048 +01:00 [INF] HTTP GET /Payment/DownloadReceipt responded 200 in 3983.7812 ms
 2025-12-31 15:39:30.053 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/DownloadReceipt?transactionId=812472943101_153629726012 - 200 222013 application/pdf 4007.8843ms
+2025-12-31 16:40:50.002 +01:00 [INF] User profile is available. Using 'C:\Users\Nzube.Nnubia\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2025-12-31 16:40:51.115 +01:00 [INF] Now listening on: https://localhost:7251
+2025-12-31 16:40:51.133 +01:00 [INF] Now listening on: http://localhost:5214
+2025-12-31 16:40:51.310 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2025-12-31 16:40:51.312 +01:00 [INF] Hosting environment: Development
+2025-12-31 16:40:51.314 +01:00 [INF] Content root path: C:\Users\Nzube.Nnubia\Projects\payments\PhedPay
+2025-12-31 16:40:55.507 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2025-12-31 16:40:55.768 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 16:40:55.817 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2025-12-31 16:40:56.250 +01:00 [INF] Executing ViewResult, running view Index.
+2025-12-31 16:40:56.515 +01:00 [INF] Executed ViewResult - view Index executed in 263.1867ms.
+2025-12-31 16:40:56.533 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2025-12-31 16:40:56.534 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2025-12-31 16:40:56.533 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - null null
+2025-12-31 16:40:56.533 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2025-12-31 16:40:56.545 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2025-12-31 16:40:56.569 +01:00 [INF] The file /images/logo.png was not modified
+2025-12-31 16:40:56.569 +01:00 [INF] The file /PhedPay.styles.css was not modified
+2025-12-31 16:40:56.570 +01:00 [INF] The file /css/site.css was not modified
+2025-12-31 16:40:56.587 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2025-12-31 16:40:56.563 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 736.3508ms
+2025-12-31 16:40:56.575 +01:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2025-12-31 16:40:56.599 +01:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2025-12-31 16:40:56.579 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2025-12-31 16:40:56.577 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2025-12-31 16:40:56.587 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=cLTutX0JzlNzPlzXqNkgZLTLumd2dMR0WVBwoH0JvzM - null null
+2025-12-31 16:40:56.619 +01:00 [INF] HTTP GET /images/logo.png responded 304 in 52.9176 ms
+2025-12-31 16:40:56.619 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 304 in 50.0245 ms
+2025-12-31 16:40:56.620 +01:00 [INF] HTTP GET /css/site.css responded 304 in 49.6055 ms
+2025-12-31 16:40:56.627 +01:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2025-12-31 16:40:56.630 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2025-12-31 16:40:56.630 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 304 in 55.6630 ms
+2025-12-31 16:40:56.631 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 304 in 34.0010 ms
+2025-12-31 16:40:56.636 +01:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2025-12-31 16:40:56.647 +01:00 [INF] The file /js/site.js was not modified
+2025-12-31 16:40:56.599 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2025-12-31 16:40:56.608 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2025-12-31 16:40:56.650 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 72.2595ms
+2025-12-31 16:40:56.652 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 304 null image/png 118.8536ms
+2025-12-31 16:40:56.654 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 304 null text/css 120.1523ms
+2025-12-31 16:40:56.657 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - 304 null text/css 125.6184ms
+2025-12-31 16:40:56.659 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 304 in 33.2070 ms
+2025-12-31 16:40:56.663 +01:00 [INF] HTTP GET / responded 200 in 947.8346 ms
+2025-12-31 16:40:56.716 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 129.552ms
+2025-12-31 16:40:56.664 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 132.5952ms
+2025-12-31 16:40:56.667 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 304 null text/javascript 122.5622ms
+2025-12-31 16:40:56.670 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 304 in 33.9743 ms
+2025-12-31 16:40:56.672 +01:00 [INF] HTTP GET /js/site.js responded 304 in 25.7782 ms
+2025-12-31 16:40:56.727 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1238.572ms
+2025-12-31 16:40:56.743 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 163.1714ms
+2025-12-31 16:40:56.771 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=cLTutX0JzlNzPlzXqNkgZLTLumd2dMR0WVBwoH0JvzM - 304 null text/javascript 183.7122ms
+2025-12-31 16:40:56.680 +01:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2025-12-31 16:40:56.808 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 304 in 129.0379 ms
+2025-12-31 16:40:56.812 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 213.1602ms
+2025-12-31 16:40:56.898 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 290.7574ms
+2025-12-31 16:40:56.919 +01:00 [INF] Request starting HTTP/1.1 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - null null
+2025-12-31 16:40:56.956 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map'. Physical path: 'C:\Users\Nzube.Nnubia\Projects\payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js.map'
+2025-12-31 16:40:56.963 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js.map responded 200 in 39.5985 ms
+2025-12-31 16:40:56.986 +01:00 [INF] Request finished HTTP/1.1 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js.map - 200 327261 text/plain 67.0069ms

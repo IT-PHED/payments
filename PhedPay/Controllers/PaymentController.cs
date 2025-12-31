@@ -121,6 +121,7 @@ namespace PhedPay.Controllers
                 TransactionReference = txId, // Store the "Account_Time" here
                 AccountNo = AccountNo,
                 MeterNo = meterNo,
+                RefId = Guid.NewGuid(),
                 Email = email,
                 Phone = phone,
                 Amount = amount,
@@ -248,7 +249,7 @@ namespace PhedPay.Controllers
 
                 // 5. SHOW RECEIPT
                 //return View("Receipt", transaction);
-                return RedirectToAction("Receipt", new { id = transaction.Id });
+                return RedirectToAction("Receipt", new { id = transaction.RefId });
             }
             else
             {
@@ -404,11 +405,11 @@ namespace PhedPay.Controllers
         }
 
         [HttpGet]
-        public async Task<IActionResult> Receipt(int id)
+        public async Task<IActionResult> Receipt(Guid id)
         {
             try
             {
-                var transaction = await _context.Transactions.FirstOrDefaultAsync(t => t.Id == id);
+                var transaction = await _context.Transactions.FirstOrDefaultAsync(t => t.RefId == id);
 
                 if (transaction == null)
                     return NotFound();
