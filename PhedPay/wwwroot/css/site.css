@@ -43,7 +43,8 @@ body {
 }
 
     .nav-link:hover {
-        color: var(--primary) !important;
+        color: white !important;
+        background-color: var(--primary) !important;
     }
 
 .pay-btn {

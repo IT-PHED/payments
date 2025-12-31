@@ -25,9 +25,9 @@
                 <div class="collapse navbar-collapse" id="mainNav">
                     <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2">
                         <li class="nav-item">
-                            <a class="nav-link" asp-page="/">Home</a>
+                            <a class="nav-link" asp-action="Index">Home</a>
                         </li>
-                        <li class="nav-item">
+                        <!--li class="nav-item">
                             <a class="nav-link" asp-page="/Pay">Pay Energy Bill</a>
                         </li>
                         <li class="nav-item">
@@ -35,9 +35,12 @@
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" asp-page="/Meters">My Meters</a>
-                        </li>
+                        </li-->
                         <li class="nav-item">
                             <a class="nav-link" href="https://map.phed.com.ng">Buy Meter Online</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" asp-action="Index">{Retrieve Token - coming soon}</a>
                         </li>
                         <li class="nav-item ms-lg-2">
                             <a class="nav-link pay-btn" asp-page="/Pay">Pay Now</a>
@@ -62,7 +65,7 @@
                     </h2>
                     <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Enter your meter number, select amount, choose payment method (card/bank transfer), and confirm. You'll receive a token instantly via SMS and email.
+                            Enter your meter number, select amount, choose payment method (card/bank transfer), and confirm. You'll receive a token instantly on your receipt.
                         </div>
                     </div>
                 </div>
@@ -88,23 +91,11 @@
                     </h2>
                     <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Tokens are generated instantly after successful payment. Check your SMS and email. If not received within 5 minutes, contact support with your transaction reference.
+                            Tokens are generated instantly after successful payment. Check your email or generated receipt. If not received within 5 minutes, contact support with your transaction reference.
                         </div>
                     </div>
                 </div>
 
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                            Can I get a refund?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Refunds are processed for failed transactions or wrong meter charges within 24-48 hours. Submit a request via Support with your transaction ID and proof of payment.
-                        </div>
-                    </div>
-                </div>
 
                 <div class="accordion-item">
                     <h2 class="accordion-header">

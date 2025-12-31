@@ -353,8 +353,8 @@ namespace PhedPay.Controllers
 
                 Username = _configuration["api_username"],
                 apikey = _configuration["apikey"],
-                //TransactionNo = transactionId // Use the ID stored in DB: "824111122001_124024985083"
-                TransactionNo = "1112202551277037" // Use the ID stored in DB: "824111122001_124024985083"
+                TransactionNo = transactionId // Use the ID stored in DB: "824111122001_124024985083"
+               
             };
 
             var content = new StringContent(JsonConvert.SerializeObject(requestPayload), Encoding.UTF8, "application/json");
