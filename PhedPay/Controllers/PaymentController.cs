@@ -331,10 +331,85 @@ namespace PhedPay.Controllers
                 System.Diagnostics.Debug.WriteLine($"PHED Notification Failed: {ex.Message}");
                 // Log failure to notify PHED, but payment is already successful
             }
+            return;
+        }
+        public async Task<String> VerifyAndProcessPending(string transactionId)
+        {
+           
+
+            // 1. Retrieve Transaction from Local DB
+            var transaction = await _context.Transactions
+            .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
+
+            if (transaction == null) return ($"Transaction {transactionId} not found in database.");
+
+            // 2. VERIFY PAYMENT (Call XpressPay)
+            var client = _httpClientFactory.CreateClient();
+
+            var verifyPayload = new { transactionId = transactionId }; // Anonymous object for JSON
+            var verifyContent = new StringContent(JsonConvert.SerializeObject(verifyPayload), Encoding.UTF8, "application/json");
+
+            var verifyRequest = new HttpRequestMessage(HttpMethod.Post, "https://myxpresspay.com:6004/api/Payments/VerifyPayment");
+            verifyRequest.Headers.Add("Authorization", "Bearer XPPUBK-44502a361d384988b6fb0be47eefc789-X"); // REPLACE WITH REAL KEY
+            verifyRequest.Content = verifyContent;
+
+            var verifyResponse = await client.SendAsync(verifyRequest);
+            var verifyResultJson = await verifyResponse.Content.ReadAsStringAsync();
+
+            // Deserialize to check status (Assuming same structure as Init response)
+            var verifyResult = JsonConvert.DeserializeObject<XpressPayResponse>(verifyResultJson);
+
+            // 3. CHECK IF SUCCESSFUL
+            if (verifyResponse.IsSuccessStatusCode && verifyResult?.responseCode == "00")
+            {
+                // Update Local DB
+                transaction.Status = "Success";
+                await _context.SaveChangesAsync();
+
+                // 4. NOTIFY PHED BACKEND
+                await NotifyPhedBackend(transaction);
+
+                // 5. SHOW RECEIPT
+               // return View("Receipt", transaction);
+            }
+            else
+            {
+                // Payment failed or verification failed
+                transaction.Status = "Failed";
+                await _context.SaveChangesAsync();
+
+                ModelState.AddModelError("", $"Payment verification failed: {verifyResult?.responseMessage ?? "Unknown Error"}");
+               
+            }
+
+            return "OK";
         }
 
+        [HttpGet]
+        public async Task<IActionResult> ProcessPending()
+        {
+            var transactions = await _context.Transactions
+                .Where(t => t.Status == "Pending")
+                .ToListAsync();
+
+            if (!transactions.Any())
+                return NotFound("No pending transactions found.");
+
+            foreach (var tra in transactions)
+            {
+                await VerifyAndProcessPending(tra.TransactionReference);
+            }
+
+            return Ok(new
+            {
+                Message = "Pending transactions processed successfully.",
+                Count = transactions.Count
+            });
+        }
+
+
         // 5. Download PDF
-       
+
         [HttpGet]
         public async Task<IActionResult> DownloadReceipt(string transactionId)
         {
