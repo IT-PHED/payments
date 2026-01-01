@@ -1,0 +1,202 @@
+﻿@model PhedPay.Models.RequeryViewModel
+
+<div class="container mt-4">
+    <h2>Transaction History</h2>
+    <p class="text-muted">Results for: <strong>@Model.SearchKey</strong></p>
+
+    <ul class="nav nav-tabs" id="historyTabs" role="tablist">
+        <li class="nav-item" role="presentation">
+            <button class="nav-link active" id="local-tab" data-bs-toggle="tab" data-bs-target="#local" type="button" role="tab" aria-controls="local" aria-selected="true">
+                Transaction History (@(Model.LocalTransactions?.Count ?? 0))
+            </button>
+        </li>
+        <li class="nav-item" role="presentation">
+            <button class="nav-link" id="oracle-tab" data-bs-toggle="tab" data-bs-target="#oracle" type="button" role="tab" aria-controls="oracle" aria-selected="false">
+                 Coming Soon (@(Model.OraclePayments?.Count ?? 0))
+            </button>
+        </li>
+    </ul>
+
+    <div class="tab-content border border-top-0 p-3" id="historyTabsContent">
+
+        <div class="tab-pane fade show active" id="local" role="tabpanel" aria-labelledby="local-tab">
+            @if (Model.LocalTransactions != null && Model.LocalTransactions.Any())
+            {
+                <table class="table table-striped table-hover">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Ref</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.LocalTransactions)
+                        {
+                            <tr>
+                                <td>@item.CreatedDate.ToString("yyyy-MM-dd HH:mm")</td>
+                                <td>@item.TransactionReference</td>
+                                <td>@item.Amount.ToString("N2")</td>
+                                <td>
+                                    <span class="badge bg-@(item.Status == "Success" ? "success" : (item.Status == "Pending" ? "warning" : "danger"))">
+                                        @item.Status
+                                    </span>
+                                </td>
+                                <td>
+                                    @if (item.Status == "Success")
+                                    {
+                                        <button class="btn btn-sm btn-info text-white"
+                                                onclick="openReceiptModal('@item.TransactionReference')">
+                                            View Receipt
+                                        </button>
+                                    }
+                                    
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-info">No local transactions found.</div>
+            }
+        </div>
+
+        <div class="tab-pane fade" id="oracle" role="tabpanel" aria-labelledby="oracle-tab">
+            @if (Model.OraclePayments != null && Model.OraclePayments.Any())
+            {
+                <table class="table table-bordered">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Payment Date</th>
+                            <th>Receipt No</th>
+                            <th>Amount</th>
+                            <th>Method</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.OraclePayments)
+                        {
+                            <tr>
+                                <td>@item.PaymentDateTime</td>
+                                <td>@item.ReceiptNumber</td>
+                                <td>@item.Amount.ToString("N2")</td>
+                                <td>@item.CreatedBy</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+            else
+            {
+                <div class="alert alert-warning">Coming Soon.</div>
+            }
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade" id="receiptModal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title">Receipt Preview</h5>
+                <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+
+                <div id="receiptLoading" class="text-center py-4">
+                    <div class="spinner-border text-primary" role="status"></div>
+                    <p class="mt-2">Fetching receipt details...</p>
+                </div>
+
+                <div id="receiptContent" class="d-none">
+                    <div class="text-center mb-3">
+                        <h6 class="text-muted">TOKEN</h6>
+                        <h2 id="r_token" class="fw-bold text-success" style="letter-spacing: 2px;"></h2>
+                        <span id="r_units" class="badge bg-secondary"></span>
+                    </div>
+
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Amount:</span> <strong id="r_amount"></strong>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Meter No:</span> <span id="r_meter"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Date:</span> <span id="r_date"></span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>Receipt No:</span> <span id="r_receiptNo" class="text-muted small"></span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="receiptError" class="alert alert-danger d-none">
+                    Could not retrieve receipt details. Please try downloading directly.
+                </div>
+
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                <a id="btnDownloadPdf" href="#" class="btn btn-primary">
+                    <i class="bi bi-file-earmark-pdf"></i> Download PDF
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<script>
+    function openReceiptModal(txId) {
+        // 1. Show Modal & Reset State
+        var myModal = new bootstrap.Modal(document.getElementById('receiptModal'));
+        myModal.show();
+
+        document.getElementById('receiptLoading').classList.remove('d-none');
+        document.getElementById('receiptContent').classList.add('d-none');
+        document.getElementById('receiptError').classList.add('d-none');
+
+        // 2. Set the Download Link URL immediately (so it works even if preview fails)
+        document.getElementById('btnDownloadPdf').href = '/Payment/DownloadReceipt?transactionId=' + txId;
+
+        // 3. Fetch Data via AJAX
+        fetch('/Payment/GetReceiptDetails?transactionId=' + txId)
+            .then(response => {
+                if (!response.ok) throw new Error("Network response was not ok");
+                return response.json();
+            })
+            .then(data => {
+                // The API returns an array, take the first item
+                if (data && data.length > 0) {
+                    var r = data[0];
+
+                    // 4. Populate Fields
+                    document.getElementById('r_token').innerText = r.TOKENDESC || "N/A";
+                    document.getElementById('r_units').innerText = (r.UNITSACTUAL || "0") + " kwh";
+                    document.getElementById('r_amount').innerText = "NGN " + r.AMOUNT;
+                    document.getElementById('r_meter').innerText = r.METER_NO;
+                    document.getElementById('r_date').innerText = r.PAYMENTDATETIME;
+                    document.getElementById('r_receiptNo').innerText = r.RECEIPTNUMBER;
+
+                    // 5. Show Content
+                    document.getElementById('receiptLoading').classList.add('d-none');
+                    document.getElementById('receiptContent').classList.remove('d-none');
+                } else {
+                    throw new Error("Empty data");
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                document.getElementById('receiptLoading').classList.add('d-none');
+                document.getElementById('receiptError').classList.remove('d-none');
+            });
+    }
+</script>

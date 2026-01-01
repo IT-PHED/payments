@@ -13,17 +13,23 @@ namespace PhedPay.Controllers
     {
         private readonly IHttpClientFactory _httpClientFactory;
         private readonly AppDbContext _context;
+        private readonly AppDbOracleContext _oracleContext;
         private readonly PdfService _pdfService;
         private readonly IConfiguration _configuration;
         private readonly ILogger<PaymentController> _logger;
 
-        public PaymentController(IHttpClientFactory httpClientFactory, AppDbContext context, PdfService pdfService, IConfiguration configuration, ILogger<PaymentController> logger)
+        public PaymentController(
+            IHttpClientFactory httpClientFactory,
+            AppDbContext context, PdfService pdfService,
+            IConfiguration configuration, ILogger<PaymentController> logger,
+            AppDbOracleContext oracleContext)
         {
             _httpClientFactory = httpClientFactory;
             _context = context;
             _pdfService = pdfService;
             _configuration = configuration;
             _logger = logger;
+            _oracleContext = oracleContext;
         }
 
         // 1. Initial Page
@@ -134,7 +140,7 @@ namespace PhedPay.Controllers
             await _context.SaveChangesAsync();
 
             var client = _httpClientFactory.CreateClient();
-            var callBackUrl = _configuration["CALLBACK_URL"];
+            var callBackUrl = _configuration["CALLBACK_URL"] + AccountNo;
 
             var payload = new
             {
@@ -262,7 +268,7 @@ namespace PhedPay.Controllers
             }
         }
 
-        private async Task NotifyPhedBackend(TransactionEntity tx)
+        private async Task<string> NotifyPhedBackend(TransactionEntity tx)
         {
             var client = _httpClientFactory.CreateClient();
             var now = DateTime.Now.ToString("dd-MM-yyyy HH:mm:ss");
@@ -323,7 +329,7 @@ namespace PhedPay.Controllers
 
 
             var content = new StringContent(JsonConvert.SerializeObject(notifyPayload), Encoding.UTF8, "application/json");
-
+            string token = "";
 
             try
             {
@@ -343,13 +349,12 @@ namespace PhedPay.Controllers
                 _logger.LogInformation("PHED Notification Failed: {0}", ex.Message);
                 // Log failure to notify PHED, but payment is already successful
             }
-            return;
+            return token;
         }
         public async Task<String> VerifyAndProcessPending(string transactionId)
         {
            
 
-            // 1. Retrieve Transaction from Local DB
             var transaction = await _context.Transactions
             .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
 
@@ -379,7 +384,7 @@ namespace PhedPay.Controllers
                 await _context.SaveChangesAsync();
 
                 // 4. NOTIFY PHED BACKEND
-                await NotifyPhedBackend(transaction);
+               var token = await NotifyPhedBackend(transaction);
 
                 // 5. SHOW RECEIPT
                // return View("Receipt", transaction);
@@ -401,7 +406,7 @@ namespace PhedPay.Controllers
         public async Task<IActionResult> ProcessPending()
         {
             var transactions = await _context.Transactions
-                .Where(t => t.Status == "Pending")
+                .Where(t => t.Status == "Pending" ||  t.Status == "Failed")
                 .ToListAsync();
 
             if (!transactions.Any())
@@ -419,6 +424,57 @@ namespace PhedPay.Controllers
             });
         }
 
+        [HttpGet]
+        public async Task<IActionResult> Requery(string AccountNo)
+        {
+            if (string.IsNullOrEmpty(AccountNo)) return View(new RequeryViewModel());
+
+            // 1. Get Local Transactions
+            var transactions = await _context.Transactions
+                .Where(t => t.AccountNo == AccountNo || t.MeterNo == AccountNo)
+                .OrderByDescending(t => t.CreatedDate)
+                .ToListAsync();
+
+            // 2. Process Pending Transactions (Your existing logic)
+            // We do this BEFORE fetching Oracle data to ensure the Oracle list includes any just-processed payments
+            foreach (var tra in transactions.Where(t => t.Status  == "Pending" ))
+            {
+                await VerifyAndProcessPending(tra.TransactionReference);
+            }
+
+            // 3. Reload Local Transactions (to reflect Status changes after processing)
+            transactions = await _context.Transactions
+                .Where(t => t.AccountNo == AccountNo || t.MeterNo == AccountNo)
+                .OrderByDescending(t => t.CreatedDate)
+                .ToListAsync();
+
+            // 4. Get Oracle Payments safely
+            // Note: I simplified the logic to rely on the input AccountNo to avoid crashing if transactions is empty
+            var payments = new List<Payment>();
+            try
+            {
+                payments = await _oracleContext.Payments
+                    .Where(p => (p.ConsumerNo == AccountNo || p.MeterNo == AccountNo) && p.CreatedBy == "phed")
+                    .OrderByDescending(p => p.PaymentDateTime) // Assuming you have a date column
+                    .Take(50) // Limit to last 50 to prevent huge loads
+                    .ToListAsync();
+            }
+            catch (Exception ex)
+            {
+                // Log Oracle error but don't crash the page, just show empty Oracle list
+                Console.WriteLine($"Oracle Error: {ex.Message}");
+            }
+
+            // 5. Build ViewModel
+            var model = new RequeryViewModel
+            {
+                SearchKey = AccountNo,
+                LocalTransactions = transactions,
+                OraclePayments = payments
+            };
+
+            return View(model);
+        }
 
         // 5. Download PDF
 
@@ -511,6 +567,37 @@ namespace PhedPay.Controllers
                 var transaction = await _context.Transactions.FindAsync(id);
                 return View(transaction);
             }
+        }
+        [HttpGet]
+        public async Task<IActionResult> GetReceiptDetails(string transactionId)
+        {
+            // 1. Get transaction to find the correct TransactionReference
+            var transaction = await _context.Transactions
+                .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
+
+            if (transaction == null) return NotFound("Transaction not found.");
+
+            // 2. Call PHED API
+            var client = _httpClientFactory.CreateClient();
+            var requestPayload = new
+            {
+                Username = _configuration["api_username"],
+                apikey = _configuration["apikey"],
+                TransactionNo = transactionId
+            };
+
+            var content = new StringContent(JsonConvert.SerializeObject(requestPayload), Encoding.UTF8, "application/json");
+
+            var response = await client.PostAsync("https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo", content);
+
+            if (response.IsSuccessStatusCode)
+            {
+                var jsonString = await response.Content.ReadAsStringAsync();
+                // Return the raw JSON from PHED directly to the frontend
+                return Content(jsonString, "application/json");
+            }
+
+            return BadRequest();
         }
     }
 }

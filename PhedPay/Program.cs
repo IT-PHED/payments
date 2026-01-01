@@ -19,9 +19,16 @@ builder.Services.AddScoped<PdfService>();
 //    options.UseSqlServer("DefaultConnection"));
 // ? CORRECT: This looks up the actual string inside appsettings.json
 var connectionString = builder.Configuration.GetConnectionString("DefaultConnection");
+var connectionStringDR = builder.Configuration.GetConnectionString("DefaultDRConnection");
 
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseSqlServer(connectionString));
+builder.Services.AddDbContext<AppDbOracleContext>(options =>
+    options.UseOracle(
+        connectionStringDR,
+        oracleOptions => oracleOptions.CommandTimeout(180)
+    ));
+
 builder.Services.AddRazorPages();
 builder.Services.AddHttpClient("BypassSSL").ConfigurePrimaryHttpMessageHandler(() =>
 {
