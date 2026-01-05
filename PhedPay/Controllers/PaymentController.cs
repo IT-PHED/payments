@@ -424,6 +424,18 @@ namespace PhedPay.Controllers
             });
         }
 
+        [HttpPost]
+        public async Task<IActionResult> RetryProcessPending(string TransactionReference)
+        {
+           
+                await VerifyAndProcessPending(TransactionReference);
+
+            return Ok(new
+            {
+                Message = "Pending transactions processed successfully."
+            });
+        }
+
         [HttpGet]
         public async Task<IActionResult> Requery(string AccountNo)
         {

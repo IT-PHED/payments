@@ -139,6 +139,14 @@
 
                 <div id="receiptError" class="alert alert-danger d-none">
                     Could not retrieve receipt details. Please try downloading directly.
+                    <button id="retryBtn"
+                            class="btn btn-lg btn-warning text-white"
+                            onclick="retryFailedTransaction()">
+                        <span id="retryBtnText">Retry Token Generation</span>
+                        <span id="retryBtnSpinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
+                    </button>
+
+
                 </div>
 
             </div>
@@ -155,7 +163,10 @@
 
 
 <script>
+    let currentTxId = null;
+
     function openReceiptModal(txId) {
+         currentTxId = txId;
         // 1. Show Modal & Reset State
         var myModal = new bootstrap.Modal(document.getElementById('receiptModal'));
         myModal.show();
@@ -199,4 +210,36 @@
                 document.getElementById('receiptError').classList.remove('d-none');
             });
     }
+
+        function retryFailedTransaction() {
+        if (!currentTxId) return;
+
+        const btn = document.getElementById('retryBtn');
+        const text = document.getElementById('retryBtnText');
+        const spinner = document.getElementById('retryBtnSpinner');
+
+        btn.disabled = true;
+        spinner.classList.remove('d-none');
+        text.innerText = 'Retrying...';
+
+        fetch('/Payment/RetryProcessPending?TransactionReference=' + encodeURIComponent(currentTxId), {
+            method: 'POST'
+        })
+        .then(r => {
+            if (!r.ok) throw new Error();
+            return r.json();
+        })
+        .then(() => {
+            openReceiptModal(currentTxId); // reattempt fetch
+        })
+       .catch(() => {
+            alert('Retry failed. Please try again later.');
+        })
+        .finally(() => {
+            btn.disabled = false;
+            spinner.classList.add('d-none');
+            text.innerText = 'Retry Token Generation';
+        });
+    }
+
 </script>
