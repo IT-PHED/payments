@@ -173,7 +173,7 @@
             <h4 class="mb-2 fw-bold text-primary">Pay PHED Electricity Bill</h4>
             <p class="text-muted mb-4">Enter your meter and contact details to proceed</p>
 
-            <form asp-action="ValidateCustomer" method="post" class="js-loading-form" novalidate>
+            <form asp-action="ValidateCustomer" method="post" class="js-loading-form" novalidate onsubmit="saveCustomerDraft()">
 
                 <div class="row g-3">
                     <!-- Meter Number -->
@@ -260,5 +260,41 @@
                 }
             });
         });
+
+                function saveCustomerDraft() {
+            const meterNo = document.querySelector('[name="MeterNo"]').value;
+            if (!meterNo) return;
+
+            const data = {
+                PhoneNumber: document.querySelector('[name="PhoneNumber"]').value,
+                Email: document.querySelector('[name="Email"]').value
+            };
+
+            localStorage.setItem(
+                'phedpay_customer_' + meterNo,
+                JSON.stringify(data)
+            );
+        }
+        document.addEventListener('DOMContentLoaded', () => {
+            const meterInput = document.querySelector('[name="MeterNo"]');
+            if (!meterInput) return;
+
+            meterInput.addEventListener('blur', function () {
+                const meterNo = this.value;
+                if (!meterNo) return;
+
+                const saved = localStorage.getItem('phedpay_customer_' + meterNo);
+                if (!saved) return;
+
+                const data = JSON.parse(saved);
+
+                if (data.PhoneNumber)
+                    document.querySelector('[name="PhoneNumber"]').value = data.PhoneNumber;
+
+                if (data.Email)
+                    document.querySelector('[name="Email"]').value = data.Email;
+            });
+        });
+
     </script>
 }

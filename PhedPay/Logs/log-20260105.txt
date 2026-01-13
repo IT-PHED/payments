@@ -1054,6 +1054,7 @@ WHERE [p].[TransactionReference] = @__transactionId_0
 2026-01-05 12:01:40.573 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay)'
 2026-01-05 12:01:40.579 +01:00 [INF] HTTP GET /Payment/GetReceiptDetails responded 200 in 446.3156 ms
 2026-01-05 12:01:40.592 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/GetReceiptDetails?transactionId=810001139801_095609785457 - 200 1002 application/json 485.6234ms
+<<<<<<< HEAD
 2026-01-05 14:20:57.402 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
 2026-01-05 14:20:59.064 +01:00 [INF] Now listening on: https://localhost:7251
 2026-01-05 14:20:59.072 +01:00 [INF] Now listening on: http://localhost:5214
@@ -1261,3 +1262,124 @@ VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6, @p7, @p8, @p9, @p10, @p11, @p12, @p13
 2026-01-05 15:01:22.501 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.InitializePayment (PhedPay)'
 2026-01-05 15:01:22.508 +01:00 [INF] HTTP POST /Payment/InitializePayment responded 302 in 4160.6692 ms
 2026-01-05 15:01:22.525 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/InitializePayment - 302 0 null 4194.9864ms
+=======
+2026-01-05 12:23:40.180 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-05 12:23:41.217 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-05 12:23:41.223 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-05 12:23:41.487 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-05 12:23:41.496 +01:00 [INF] Hosting environment: Development
+2026-01-05 12:23:41.516 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2026-01-05 12:23:42.179 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-05 12:23:42.516 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-05 12:23:42.587 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:23:43.303 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-05 12:23:43.926 +01:00 [INF] Executed ViewResult - view Index executed in 663.2386ms.
+2026-01-05 12:23:43.936 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-05 12:23:43.936 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-05 12:23:43.955 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1360.0424ms
+2026-01-05 12:23:43.988 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-05 12:23:44.033 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 94.6044ms
+2026-01-05 12:23:44.040 +01:00 [INF] HTTP GET / responded 200 in 1620.0282 ms
+2026-01-05 12:23:44.080 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1937.8302ms
+2026-01-05 12:23:44.131 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 196.2286ms
+2026-01-05 12:26:44.433 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 294
+2026-01-05 12:26:44.537 +01:00 [INF] CORS policy execution successful.
+2026-01-05 12:26:44.553 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-05 12:26:44.606 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:26:45.235 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-05 12:26:45.255 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-05 12:26:45.571 +01:00 [INF] Received HTTP response headers after 295.9842ms - 500
+2026-01-05 12:26:45.582 +01:00 [INF] End processing HTTP request after 360.6657ms - 500
+2026-01-05 12:26:45.611 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-05 12:26:45.684 +01:00 [INF] Executed ViewResult - view Index executed in 75.2149ms.
+2026-01-05 12:26:45.694 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 1077.1877ms
+2026-01-05 12:26:45.702 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-05 12:26:45.708 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 1162.8872 ms
+2026-01-05 12:26:45.722 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-05 12:26:45.722 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-05 12:26:45.723 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 1290.5024ms
+2026-01-05 12:26:45.766 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 47.3333ms
+2026-01-05 12:26:45.857 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 134.9786ms
+2026-01-05 12:26:55.521 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/ValidateCustomer - null null
+2026-01-05 12:26:55.561 +01:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-01-05 12:26:55.571 +01:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-01-05 12:26:55.580 +01:00 [INF] HTTP GET /Payment/ValidateCustomer responded 405 in 26.1841 ms
+2026-01-05 12:26:55.596 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/ValidateCustomer - 405 0 null 77.2864ms
+2026-01-05 12:26:59.246 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/ - null null
+2026-01-05 12:26:59.270 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-05 12:26:59.280 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:26:59.307 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-05 12:26:59.341 +01:00 [INF] Executed ViewResult - view Index executed in 34.8166ms.
+2026-01-05 12:26:59.352 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 57.1539ms
+2026-01-05 12:26:59.362 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-05 12:26:59.368 +01:00 [INF] HTTP GET /Payment/ responded 200 in 98.0155 ms
+2026-01-05 12:26:59.381 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/ - 200 null text/html; charset=utf-8 136.7111ms
+2026-01-05 12:26:59.422 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-05 12:26:59.422 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-05 12:26:59.436 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 14.7103ms
+2026-01-05 12:26:59.484 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 62.7027ms
+2026-01-05 12:27:11.770 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-05 12:27:11.787 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 3.2912 ms
+2026-01-05 12:27:11.799 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 29.5286ms
+2026-01-05 12:27:11.814 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-05 12:48:38.935 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/payment/Requery?AccountNo=862145320701 - null null
+2026-01-05 12:48:39.000 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-05 12:48:39.026 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:48:40.444 +01:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionEntity'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-05 12:48:43.011 +01:00 [INF] Executed DbCommand (243ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-05 12:48:43.462 +01:00 [INF] Executed DbCommand (28ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-05 12:48:44.177 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-05 12:48:44.226 +01:00 [INF] Executed ViewResult - view Requery executed in 51.8079ms.
+2026-01-05 12:48:44.235 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 5200.5612ms
+2026-01-05 12:48:44.247 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-05 12:48:44.252 +01:00 [INF] HTTP GET /payment/Requery responded 200 in 5253.3336 ms
+2026-01-05 12:48:44.267 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-05 12:48:44.277 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-05 12:48:44.352 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/payment/Requery?AccountNo=862145320701 - 200 null text/html; charset=utf-8 5418.642ms
+2026-01-05 12:48:44.369 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 97.7494ms
+2026-01-05 12:48:44.385 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.8027ms
+2026-01-05 12:48:44.325 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-05 12:48:44.437 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.6706 ms
+2026-01-05 12:48:44.446 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 120.4502ms
+2026-01-05 12:48:44.459 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-05 12:48:46.135 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/GetReceiptDetails?transactionId=862145320701_094303912828 - null null
+2026-01-05 12:48:46.151 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay)'
+2026-01-05 12:48:46.174 +01:00 [INF] Route matched with {action = "GetReceiptDetails", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetReceiptDetails(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:48:46.280 +01:00 [INF] Executed DbCommand (20ms) [Parameters=[@__transactionId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[TransactionReference] = @__transactionId_0
+2026-01-05 12:48:46.323 +01:00 [INF] Start processing HTTP request POST https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo
+2026-01-05 12:48:46.331 +01:00 [INF] Sending HTTP request POST https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo
+2026-01-05 12:48:46.797 +01:00 [INF] Received HTTP response headers after 457.0228ms - 200
+2026-01-05 12:48:46.802 +01:00 [INF] End processing HTTP request after 478.5412ms - 200
+2026-01-05 12:48:46.815 +01:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2026-01-05 12:48:46.822 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay) in 640.6801ms
+2026-01-05 12:48:46.830 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay)'
+2026-01-05 12:48:46.837 +01:00 [INF] HTTP GET /Payment/GetReceiptDetails responded 200 in 686.3198 ms
+2026-01-05 12:48:46.850 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/GetReceiptDetails?transactionId=862145320701_094303912828 - 200 1024 application/json 717.0231ms
+2026-01-05 12:49:01.127 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/GetReceiptDetails?transactionId=862145320701_094303912828 - null null
+2026-01-05 12:49:01.139 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay)'
+2026-01-05 12:49:01.144 +01:00 [INF] Route matched with {action = "GetReceiptDetails", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] GetReceiptDetails(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-05 12:49:01.384 +01:00 [INF] Executed DbCommand (23ms) [Parameters=[@__transactionId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[TransactionReference] = @__transactionId_0
+2026-01-05 12:49:01.401 +01:00 [INF] Start processing HTTP request POST https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo
+2026-01-05 12:49:01.409 +01:00 [INF] Sending HTTP request POST https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo
+2026-01-05 12:49:02.096 +01:00 [INF] Received HTTP response headers after 679.8869ms - 200
+2026-01-05 12:49:02.108 +01:00 [INF] End processing HTTP request after 707.466ms - 200
+2026-01-05 12:49:02.117 +01:00 [INF] Executing ContentResult with HTTP Response ContentType of application/json
+2026-01-05 12:49:02.123 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay) in 972.0585ms
+2026-01-05 12:49:02.132 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.GetReceiptDetails (PhedPay)'
+2026-01-05 12:49:02.139 +01:00 [INF] HTTP GET /Payment/GetReceiptDetails responded 200 in 999.2431 ms
+2026-01-05 12:49:02.149 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/GetReceiptDetails?transactionId=862145320701_094303912828 - 200 1024 application/json 1023.3376ms
+>>>>>>> 9f7e696b0d40652293733555604299fb4a9811a9
