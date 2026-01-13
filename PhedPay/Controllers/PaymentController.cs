@@ -354,7 +354,6 @@ namespace PhedPay.Controllers
         public async Task<String> VerifyAndProcessPending(string transactionId)
         {
            
-
             var transaction = await _context.Transactions
             .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
 
@@ -394,12 +393,97 @@ namespace PhedPay.Controllers
                 // Payment failed or verification failed
                 transaction.Status = "Failed";
                 await _context.SaveChangesAsync();
-
                 ModelState.AddModelError("", $"Payment verification failed: {verifyResult?.responseMessage ?? "Unknown Error"}");
                
             }
 
             return "OK";
+        }
+
+        [HttpGet]
+        public async Task<IActionResult> VerifyGlobalPay(string transactionId)
+        {
+            if (string.IsNullOrEmpty(transactionId)) return BadRequest("No Transaction ID provided.");
+
+            // 1. Retrieve Transaction from Local DB
+            // We use FirstOrDefault because transactionId is a string reference (GP_2026...), not the int Primary Key
+            var transaction = await _context.Transactions
+                .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
+
+            if (transaction == null) return NotFound($"Transaction {transactionId} not found in database.");
+
+            // 2. IDEMPOTENCY CHECK (Prevent duplicate processing)
+            // If we already marked it as success, skip the APIs and show the receipt immediately.
+            if (transaction.Status == "Success")
+            {
+                return View("Receipt", transaction);
+            }
+
+            // 3. REQUERY GLOBALPAY (Convert Node.js logic to C#)
+            var client = _httpClientFactory.CreateClient();
+
+            // Construct the URL: BaseURL + Path + TransactionRef
+            // BaseURL usually: https://paygw.globalpay.com.ng/globalpay-paymentgateway/api
+            var baseUrl = "https://paygw.globalpay.com.ng/globalpay-paymentgateway/api";
+            var requestUrl = $"{baseUrl}/paymentgateway/query-single-transaction-by-merchant-reference/{transactionId}";
+
+            var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
+
+            // Add Headers from Config
+            var apiKey = _configuration["GlobalPaySettings:ApiKey"] ?? "your-api-key";
+            request.Headers.Add("apiKey", apiKey);
+
+            try
+            {
+                var response = await client.SendAsync(request);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                // 4. Check API Response
+                if (response.IsSuccessStatusCode)
+                {
+                    var gpResult = JsonConvert.DeserializeObject<GlobalPayQueryResponse>(responseString);
+
+                    // Check if GlobalPay says it is successful
+                    // Note: Check both 'isSuccessful' boolean and 'paymentStatus' string just to be safe
+                    if (gpResult != null && gpResult.isSuccessful &&
+                       (gpResult.data?.paymentStatus?.Equals("Successful", StringComparison.OrdinalIgnoreCase) == true))
+                    {
+                        // A. Update Local DB
+                        transaction.Status = "Success";
+                        await _context.SaveChangesAsync();
+
+                        // B. Notify PHED Backend
+                        // We await this so the receipt view loads only after notification is sent
+                        await NotifyPhedBackend(transaction);
+
+                        // C. Show Receipt
+                        return View("Receipt", transaction);
+                    }
+                    else
+                    {
+                        // Payment Failed at Gateway
+                        transaction.Status = "Failed";
+                        await _context.SaveChangesAsync();
+
+                        ModelState.AddModelError("", $"Payment Unsuccessful: {gpResult?.successMessage ?? "Unknown Error"}");
+                        return View("Error");
+                    }
+                }
+                else
+                {
+                    // HTTP Request failed (e.g. 401 Unauthorized, 404 Not Found)
+                    System.Diagnostics.Debug.WriteLine($"GlobalPay Requery HTTP Error: {response.StatusCode} - {responseString}");
+                    ModelState.AddModelError("", "Could not verify payment status with GlobalPay.");
+                    return View("Error");
+                }
+            }
+            catch (Exception ex)
+            {
+                // Network or Code Error
+                System.Diagnostics.Debug.WriteLine($"VerifyGlobalPay Exception: {ex.Message}");
+                ModelState.AddModelError("", "An error occurred during verification.");
+                return View("Error");
+            }
         }
 
         [HttpGet]
@@ -611,6 +695,100 @@ namespace PhedPay.Controllers
 
             return BadRequest();
         }
+        [HttpPost]
+        public async Task<IActionResult> InitializeGlobalPay(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address)
+        {
+            // 1. Generate Transaction Reference
+            var txRef = $"GP_{DateTime.Now:yyyyMMddHHmmss}_{new Random().Next(1000, 9999)}";
+
+            // 2. Split Name (GlobalPay requires First & Last)
+            var names = (customerName ?? "Customer").Split(' ');
+            var firstName = names[0];
+            var lastName = names.Length > 1 ? string.Join(" ", names.Skip(1)) : "."; // Fallback if only one name
+
+            // 3. Prepare Payload
+            var payload = new GlobalPayRequest
+            {
+                amount = amount,
+                merchantTransactionReference = txRef,
+                redirectUrl = Url.Action("VerifyGlobalPay", "Payment", new { transactionId = txRef }, Request.Scheme),
+                customer = new GlobalPayCustomer
+                {
+                    firstName = firstName ?? "First_name",
+                    lastName = lastName ?? "last_name",
+                    currency = "NGN",
+                    phoneNumber = phone,
+                    address = address ?? "Port Harcourt", // Default if empty
+                    emailAddress = email,
+                    paymentFormCustomFields = new List<GlobalPayCustomField>
+            {
+                new GlobalPayCustomField { name = "AccountNo", value = AccountNo },
+                new GlobalPayCustomField { name = "MeterNo", value = meterNo }
+            }
+                }
+            };
+
+            // 4. Send Request
+            var client = _httpClientFactory.CreateClient();
+
+            var apiKey = _configuration["GlobalPaySettings:ApiKey"] ?? "";
+
+            var requestMsg = new HttpRequestMessage(HttpMethod.Post, "https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link");
+            requestMsg.Headers.Add("apikey", apiKey);
+            requestMsg.Headers.Add("language", "en"); 
+
+            var jsonContent = JsonConvert.SerializeObject(payload);
+            requestMsg.Content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+
+            try
+            {
+                var response = await client.SendAsync(requestMsg);
+                var responseString = await response.Content.ReadAsStringAsync();
+
+                if (response.IsSuccessStatusCode)
+                {
+                    
+                    var result = JsonConvert.DeserializeObject<GlobalPayInitResponse>(responseString);
+
+                    
+                    if (result != null && result.isSuccessful && result.data != null)
+                    {
+                      var transaction = new TransactionEntity
+                        {
+                            TransactionReference = txRef, // The ID we generated earlier
+                            AccountNo = AccountNo,
+                            MeterNo = meterNo,
+                            Email = email,
+                            Phone = phone,
+                            Amount = amount,
+                            CustomerName = customerName,
+                            Address = address,
+                            Status = "Pending",
+                            CreatedDate = DateTime.Now
+                        };
+
+                        _context.Transactions.Add(transaction);
+                        await _context.SaveChangesAsync();
+
+                        // 4. Redirect User to GlobalPay Checkout
+                        return Redirect(result.data.checkoutUrl);
+                    }
+                }
+
+                // Log failure details for debugging
+                System.Diagnostics.Debug.WriteLine("GlobalPay Failed: " + responseString);
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine("GlobalPay Exception: " + ex.Message);
+            }
+
+            // Fallback if something went wrong
+            return View("Error");
+
+            
+        }
+
     }
 }
 

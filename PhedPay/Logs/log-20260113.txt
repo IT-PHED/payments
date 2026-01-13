@@ -1,0 +1,35 @@
+2026-01-13 13:24:08.519 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-13 13:24:09.218 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-13 13:24:09.222 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-13 13:24:09.322 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-13 13:24:09.326 +01:00 [INF] Hosting environment: Development
+2026-01-13 13:24:09.329 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-13 13:24:10.919 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-13 13:24:11.082 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-13 13:24:11.106 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-13 13:24:11.361 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-13 13:24:11.694 +01:00 [INF] Executed ViewResult - view Index executed in 333.8288ms.
+2026-01-13 13:24:11.708 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 597.2178ms
+2026-01-13 13:24:11.714 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-13 13:24:11.722 +01:00 [INF] HTTP GET / responded 200 in 677.5801 ms
+2026-01-13 13:24:11.741 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 835.122ms
+2026-01-13 13:24:11.771 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-13 13:24:11.777 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-13 13:24:11.777 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - null null
+2026-01-13 13:24:11.796 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 24.6658ms
+2026-01-13 13:24:11.824 +01:00 [INF] The file /PhedPay.styles.css was not modified
+2026-01-13 13:24:11.830 +01:00 [INF] The file /css/site.css was not modified
+2026-01-13 13:24:11.808 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-13 13:24:11.854 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 304 in 57.3070 ms
+2026-01-13 13:24:11.857 +01:00 [INF] HTTP GET /css/site.css responded 304 in 28.9789 ms
+2026-01-13 13:24:11.873 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 304 null text/css 95.8488ms
+2026-01-13 13:24:11.895 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=zOqBk80THz8Zu2QyAalRH2z1rLq5a_LAkFo8r0ytsdQ - 304 null text/css 117.7759ms
+2026-01-13 13:24:11.808 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-13 13:24:11.804 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=cLTutX0JzlNzPlzXqNkgZLTLumd2dMR0WVBwoH0JvzM - null null
+2026-01-13 13:24:11.933 +01:00 [INF] The file /images/logo.png was not modified
+2026-01-13 13:24:11.946 +01:00 [INF] The file /js/site.js was not modified
+2026-01-13 13:24:11.949 +01:00 [INF] HTTP GET /images/logo.png responded 304 in 17.2319 ms
+2026-01-13 13:24:11.956 +01:00 [INF] HTTP GET /js/site.js responded 304 in 10.5223 ms
+2026-01-13 13:24:11.962 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 304 null image/png 154.9266ms
+2026-01-13 13:24:11.971 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=cLTutX0JzlNzPlzXqNkgZLTLumd2dMR0WVBwoH0JvzM - 304 null text/javascript 167.266ms
+2026-01-13 13:24:12.056 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 248.2094ms
