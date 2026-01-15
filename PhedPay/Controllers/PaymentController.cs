@@ -220,12 +220,7 @@ namespace PhedPay.Controllers
 
             if (transaction == null) return NotFound($"Transaction {transactionId} not found in database.");
 
-            //if (transaction.Status == "Success")
-            //{
-            //    return View("Receipt", transaction);
-            //}
-
-            // 2. VERIFY PAYMENT (Call XpressPay)
+            
             var client = _httpClientFactory.CreateClient();
 
             var verifyPayload = new { transactionId = transactionId }; // Anonymous object for JSON
@@ -246,15 +241,11 @@ namespace PhedPay.Controllers
             // 3. CHECK IF SUCCESSFUL
             if (verifyResponse.IsSuccessStatusCode && verifyResult?.responseCode == "00")
             {
-                // 4. NOTIFY PHED BACKEND
-                //await NotifyPhedBackend(transaction);
-
-                // Update Local DB
+                
                 transaction.Status = "Success";
                 await _context.SaveChangesAsync();
 
-                // 5. SHOW RECEIPT
-                //return View("Receipt", transaction);
+              
                 return RedirectToAction("Receipt", new { id = transaction.RefId });
             }
             else
@@ -340,14 +331,13 @@ namespace PhedPay.Controllers
                 var output = resp;
                 var errorBody = await resp.Content.ReadAsStringAsync();
 
-                // This will print the actual error from the API to your Visual Studio Output window
                 _logger.LogInformation("API Error: {0}", errorBody);
 
             }
             catch (Exception ex)
             {
                 _logger.LogInformation("PHED Notification Failed: {0}", ex.Message);
-                // Log failure to notify PHED, but payment is already successful
+              
             }
             return token;
         }
@@ -360,6 +350,9 @@ namespace PhedPay.Controllers
             if (transaction == null) return ($"Transaction {transactionId} not found in database.");
 
             // 2. VERIFY PAYMENT (Call XpressPay)
+
+            //if it contains GP, skip this and call GlobalPay requery instead
+
             var client = _httpClientFactory.CreateClient();
 
             var verifyPayload = new { transactionId = transactionId }; // Anonymous object for JSON
@@ -405,8 +398,7 @@ namespace PhedPay.Controllers
         {
             if (string.IsNullOrEmpty(transactionId)) return BadRequest("No Transaction ID provided.");
 
-            // 1. Retrieve Transaction from Local DB
-            // We use FirstOrDefault because transactionId is a string reference (GP_2026...), not the int Primary Key
+          
             var transaction = await _context.Transactions
                 .FirstOrDefaultAsync(t => t.TransactionReference == transactionId);
 
@@ -424,7 +416,8 @@ namespace PhedPay.Controllers
 
             // Construct the URL: BaseURL + Path + TransactionRef
             // BaseURL usually: https://paygw.globalpay.com.ng/globalpay-paymentgateway/api
-            var baseUrl = "https://paygw.globalpay.com.ng/globalpay-paymentgateway/api";
+            
+            var baseUrl = _configuration["GlobalPaySettings:baseUrl"] ?? "your-api-key"; 
             var requestUrl = $"{baseUrl}/paymentgateway/query-single-transaction-by-merchant-reference/{transactionId}";
 
             var request = new HttpRequestMessage(HttpMethod.Get, requestUrl);
@@ -435,25 +428,27 @@ namespace PhedPay.Controllers
 
             try
             {
+                // ... inside the try block ...
                 var response = await client.SendAsync(request);
                 var responseString = await response.Content.ReadAsStringAsync();
 
-                // 4. Check API Response
                 if (response.IsSuccessStatusCode)
                 {
                     var gpResult = JsonConvert.DeserializeObject<GlobalPayQueryResponse>(responseString);
 
-                    // Check if GlobalPay says it is successful
-                    // Note: Check both 'isSuccessful' boolean and 'paymentStatus' string just to be safe
+                    // FIX 3: Check if List is not null and has items
+                    var paymentData = gpResult?.data?.FirstOrDefault();
+
+                    // FIX 4: Validate based on the item found
                     if (gpResult != null && gpResult.isSuccessful &&
-                       (gpResult.data?.paymentStatus?.Equals("Successful", StringComparison.OrdinalIgnoreCase) == true))
+                        paymentData != null &&
+                        paymentData.transactionStatus?.Equals("Successful", StringComparison.OrdinalIgnoreCase) == true)
                     {
                         // A. Update Local DB
                         transaction.Status = "Success";
                         await _context.SaveChangesAsync();
 
-                        // B. Notify PHED Backend
-                        // We await this so the receipt view loads only after notification is sent
+                        // B. Notify PHED
                         await NotifyPhedBackend(transaction);
 
                         // C. Show Receipt
@@ -461,21 +456,16 @@ namespace PhedPay.Controllers
                     }
                     else
                     {
-                        // Payment Failed at Gateway
+                        // Payment Failed
                         transaction.Status = "Failed";
                         await _context.SaveChangesAsync();
 
-                        ModelState.AddModelError("", $"Payment Unsuccessful: {gpResult?.successMessage ?? "Unknown Error"}");
+                        var errorMsg = paymentData?.transactionStatus ?? gpResult?.successMessage ?? "Payment Failed";
+                        ModelState.AddModelError("", $"Payment Unsuccessful: {errorMsg}");
                         return View("Error");
                     }
                 }
-                else
-                {
-                    // HTTP Request failed (e.g. 401 Unauthorized, 404 Not Found)
-                    System.Diagnostics.Debug.WriteLine($"GlobalPay Requery HTTP Error: {response.StatusCode} - {responseString}");
-                    ModelState.AddModelError("", "Could not verify payment status with GlobalPay.");
-                    return View("Error");
-                }
+                return View("Error");
             }
             catch (Exception ex)
             {
@@ -684,7 +674,10 @@ namespace PhedPay.Controllers
 
             var content = new StringContent(JsonConvert.SerializeObject(requestPayload), Encoding.UTF8, "application/json");
 
-            var response = await client.PostAsync("https://dlenhance.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo", content);
+           // var response = await client.PostAsync("https://cashiers3.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo", content);
+            string baseUrl = _configuration["baseAPI"];
+            string endpoint = $"{baseUrl}Collection/GetTransactionInfo";
+            var response = await client.PostAsync(endpoint, content);
 
             if (response.IsSuccessStatusCode)
             {
@@ -700,13 +693,34 @@ namespace PhedPay.Controllers
         {
             // 1. Generate Transaction Reference
             var txRef = $"GP_{DateTime.Now:yyyyMMddHHmmss}_{new Random().Next(1000, 9999)}";
+            // 1. Clean the raw input first
+            string cleanName = (customerName ?? "").Trim();
 
-            // 2. Split Name (GlobalPay requires First & Last)
-            var names = (customerName ?? "Customer").Split(' ');
-            var firstName = names[0];
-            var lastName = names.Length > 1 ? string.Join(" ", names.Skip(1)) : "."; // Fallback if only one name
+            // 2. Default values (Fallback)
+            string firstName = "Customer";
+            string lastName = ".";
 
-            // 3. Prepare Payload
+            if (!string.IsNullOrEmpty(cleanName))
+            {
+                // Split by space, and REMOVE EMPTY ENTRIES (handles double spaces)
+                var parts = cleanName.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                if (parts.Length > 0)
+                {
+                    firstName = parts[0].Trim();
+
+                    if (parts.Length > 1)
+                    {
+                        // Join the rest and TRIM the result
+                        // This fixes the " DUMUOYI" issue
+                        lastName = string.Join(" ", parts.Skip(1)).Trim();
+                    }
+                }
+            }
+
+           
+
+              // 3. Prepare Payload
             var payload = new GlobalPayRequest
             {
                 amount = amount,
@@ -732,13 +746,16 @@ namespace PhedPay.Controllers
             var client = _httpClientFactory.CreateClient();
 
             var apiKey = _configuration["GlobalPaySettings:ApiKey"] ?? "";
+            var url = _configuration["GlobalPaySettings:Url"] ?? "";
 
-            var requestMsg = new HttpRequestMessage(HttpMethod.Post, "https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link");
+            var requestMsg = new HttpRequestMessage(HttpMethod.Post, url);
             requestMsg.Headers.Add("apikey", apiKey);
             requestMsg.Headers.Add("language", "en"); 
 
             var jsonContent = JsonConvert.SerializeObject(payload);
             requestMsg.Content = new StringContent(jsonContent, Encoding.UTF8, "application/json");
+            string whatImSending = await requestMsg.Content.ReadAsStringAsync();
+            System.Diagnostics.Debug.WriteLine("FINAL REQUEST BODY: " + whatImSending);
 
             try
             {

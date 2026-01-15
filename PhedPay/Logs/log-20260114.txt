@@ -1,0 +1,276 @@
+2026-01-14 08:25:53.138 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-14 08:25:54.070 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-14 08:25:54.075 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-14 08:25:54.163 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-14 08:25:54.170 +01:00 [INF] Hosting environment: Development
+2026-01-14 08:25:54.172 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-14 08:25:56.116 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 08:25:56.344 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 08:25:56.404 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:25:57.030 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 08:25:57.493 +01:00 [INF] Executed ViewResult - view Index executed in 469.5975ms.
+2026-01-14 08:25:57.522 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1111.7463ms
+2026-01-14 08:25:57.529 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 08:25:57.544 +01:00 [INF] HTTP GET / responded 200 in 1279.6912 ms
+2026-01-14 08:25:57.571 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1472.5946ms
+2026-01-14 08:25:57.620 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-14 08:25:57.622 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 08:25:57.622 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-14 08:25:57.670 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-01-14 08:25:57.735 +01:00 [INF] The file /PhedPay.styles.css was not modified
+2026-01-14 08:25:57.645 +01:00 [INF] The file /lib/bootstrap/dist/css/bootstrap.min.css was not modified
+2026-01-14 08:25:57.778 +01:00 [INF] The file /lib/jquery-validation/dist/jquery.validate.min.js was not modified
+2026-01-14 08:25:57.781 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 304 in 46.5333 ms
+2026-01-14 08:25:57.784 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 304 in 148.6200 ms
+2026-01-14 08:25:57.787 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 304 in 9.8095 ms
+2026-01-14 08:25:57.792 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 304 null text/css 170.1232ms
+2026-01-14 08:25:57.796 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 304 null text/css 177.4611ms
+2026-01-14 08:25:57.804 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 304 null text/javascript 133.5065ms
+2026-01-14 08:25:57.659 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-14 08:25:57.755 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 133.385ms
+2026-01-14 08:25:57.670 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-14 08:25:57.867 +01:00 [INF] The file /lib/jquery/dist/jquery.min.js was not modified
+2026-01-14 08:25:57.688 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-01-14 08:25:57.887 +01:00 [INF] The file /lib/bootstrap/dist/js/bootstrap.bundle.min.js was not modified
+2026-01-14 08:25:57.889 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 304 in 23.9069 ms
+2026-01-14 08:25:57.898 +01:00 [INF] The file /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js was not modified
+2026-01-14 08:25:57.901 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 304 in 14.7311 ms
+2026-01-14 08:25:57.907 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 304 null text/javascript 253.4226ms
+2026-01-14 08:25:57.911 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 304 in 13.4005 ms
+2026-01-14 08:25:57.919 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 304 null text/javascript 249.1121ms
+2026-01-14 08:25:57.939 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 304 null text/javascript 251.2021ms
+2026-01-14 08:25:57.712 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 08:25:58.110 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 398.2754ms
+2026-01-14 08:26:46.300 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-14 08:26:46.336 +01:00 [INF] CORS policy execution successful.
+2026-01-14 08:26:46.350 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 08:26:46.389 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:26:47.339 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 08:26:47.351 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 08:26:48.354 +01:00 [INF] Received HTTP response headers after 996.3741ms - 200
+2026-01-14 08:26:48.362 +01:00 [INF] End processing HTTP request after 1032.4651ms - 200
+2026-01-14 08:26:48.657 +01:00 [INF] Executing ViewResult, running view ConfirmPayment.
+2026-01-14 08:26:48.755 +01:00 [INF] Executed ViewResult - view ConfirmPayment executed in 98.7543ms.
+2026-01-14 08:26:48.771 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 2374.7054ms
+2026-01-14 08:26:48.774 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 08:26:48.777 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 2433.5944 ms
+2026-01-14 08:26:48.783 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 2483.6308ms
+2026-01-14 08:26:48.875 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 08:26:48.884 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 9.5586ms
+2026-01-14 08:26:48.891 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 08:26:48.930 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.197ms
+2026-01-14 08:26:51.722 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 08:26:51.733 +01:00 [INF] CORS policy execution successful.
+2026-01-14 08:26:51.742 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 08:26:51.759 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:26:57.518 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:26:57.523 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:26:58.576 +01:00 [INF] Received HTTP response headers after 1051.1538ms - 400
+2026-01-14 08:26:58.580 +01:00 [INF] End processing HTTP request after 1062.3856ms - 400
+2026-01-14 08:26:58.593 +01:00 [INF] Executing ViewResult, running view Error.
+2026-01-14 08:26:58.608 +01:00 [INF] Executed ViewResult - view Error executed in 17.2721ms.
+2026-01-14 08:26:58.612 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay) in 6846.1056ms
+2026-01-14 08:26:58.618 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 08:26:58.622 +01:00 [INF] HTTP POST /Payment/InitializeGlobalPay responded 200 in 6885.1509 ms
+2026-01-14 08:26:58.626 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - 200 null text/html; charset=utf-8 6904.1232ms
+2026-01-14 08:26:58.694 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 08:26:58.696 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 08:26:58.722 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 26.3135ms
+2026-01-14 08:26:58.748 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 54.2984ms
+2026-01-14 08:27:03.438 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 08:27:03.451 +01:00 [INF] CORS policy execution successful.
+2026-01-14 08:27:03.454 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 08:27:03.457 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:27:18.002 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:27:18.007 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:27:18.256 +01:00 [INF] Received HTTP response headers after 245.6192ms - 400
+2026-01-14 08:27:18.262 +01:00 [INF] End processing HTTP request after 260.1394ms - 400
+2026-01-14 08:28:29.560 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-14 08:28:30.090 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-14 08:28:30.096 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-14 08:28:30.179 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-14 08:28:30.183 +01:00 [INF] Hosting environment: Development
+2026-01-14 08:28:30.185 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-14 08:28:31.582 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 08:28:31.813 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 08:28:31.858 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:28:32.253 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 08:28:32.555 +01:00 [INF] Executed ViewResult - view Index executed in 307.5026ms.
+2026-01-14 08:28:32.569 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 701.3551ms
+2026-01-14 08:28:32.573 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 08:28:32.582 +01:00 [INF] HTTP GET / responded 200 in 837.3946 ms
+2026-01-14 08:28:32.600 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1040.4554ms
+2026-01-14 08:28:32.651 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 08:28:32.651 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 08:28:32.702 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 51.4141ms
+2026-01-14 08:28:32.773 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 123.2887ms
+2026-01-14 08:28:44.057 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-14 08:28:44.079 +01:00 [INF] CORS policy execution successful.
+2026-01-14 08:28:44.090 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 08:28:44.119 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:28:44.432 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 08:28:44.445 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 08:28:45.045 +01:00 [INF] Received HTTP response headers after 591.5366ms - 200
+2026-01-14 08:28:45.050 +01:00 [INF] End processing HTTP request after 627.2817ms - 200
+2026-01-14 08:28:45.318 +01:00 [INF] Executing ViewResult, running view ConfirmPayment.
+2026-01-14 08:28:45.408 +01:00 [INF] Executed ViewResult - view ConfirmPayment executed in 92.1184ms.
+2026-01-14 08:28:45.411 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 1285.908ms
+2026-01-14 08:28:45.414 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 08:28:45.417 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 1331.2612 ms
+2026-01-14 08:28:45.422 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 1365.6304ms
+2026-01-14 08:28:45.472 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 08:28:45.474 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 08:28:45.488 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 15.0246ms
+2026-01-14 08:28:45.520 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.3179ms
+2026-01-14 08:28:48.222 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 08:28:48.235 +01:00 [INF] CORS policy execution successful.
+2026-01-14 08:28:48.241 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 08:28:48.254 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 08:29:44.577 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:29:44.580 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 08:29:46.163 +01:00 [INF] Received HTTP response headers after 1579.5904ms - 400
+2026-01-14 08:29:46.168 +01:00 [INF] End processing HTTP request after 1590.0172ms - 400
+2026-01-14 09:00:24.939 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-14 09:00:25.555 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-14 09:00:25.558 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-14 09:00:25.662 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-14 09:00:25.665 +01:00 [INF] Hosting environment: Development
+2026-01-14 09:00:25.668 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-14 09:00:27.345 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 09:00:27.580 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 09:00:27.626 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:00:28.096 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 09:00:28.548 +01:00 [INF] Executed ViewResult - view Index executed in 458.8117ms.
+2026-01-14 09:00:28.570 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 935.838ms
+2026-01-14 09:00:28.577 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 09:00:28.590 +01:00 [INF] HTTP GET / responded 200 in 1067.7242 ms
+2026-01-14 09:00:28.614 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1288.6555ms
+2026-01-14 09:00:28.680 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 09:00:28.703 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 09:00:28.729 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 49.5585ms
+2026-01-14 09:00:28.844 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 140.7992ms
+2026-01-14 09:02:13.266 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-14 09:02:13.303 +01:00 [INF] CORS policy execution successful.
+2026-01-14 09:02:13.315 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 09:02:13.343 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:02:14.065 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 09:02:14.077 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 09:02:15.017 +01:00 [INF] Received HTTP response headers after 929.6482ms - 200
+2026-01-14 09:02:15.025 +01:00 [INF] End processing HTTP request after 968.334ms - 200
+2026-01-14 09:02:15.316 +01:00 [INF] Executing ViewResult, running view ConfirmPayment.
+2026-01-14 09:02:15.431 +01:00 [INF] Executed ViewResult - view ConfirmPayment executed in 116.4055ms.
+2026-01-14 09:02:15.438 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 2088.0779ms
+2026-01-14 09:02:15.441 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 09:02:15.444 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 2134.1975 ms
+2026-01-14 09:02:15.449 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 2183.0168ms
+2026-01-14 09:02:15.475 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 09:02:15.482 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 7.728ms
+2026-01-14 09:02:15.488 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 09:02:15.530 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 41.9042ms
+2026-01-14 09:02:17.898 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 09:02:17.913 +01:00 [INF] CORS policy execution successful.
+2026-01-14 09:02:17.920 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 09:02:17.933 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:02:33.708 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:02:33.711 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:02:34.765 +01:00 [INF] Received HTTP response headers after 1050.7441ms - 400
+2026-01-14 09:02:34.769 +01:00 [INF] End processing HTTP request after 1061.1794ms - 400
+2026-01-14 09:18:58.665 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-14 09:19:00.202 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-14 09:19:00.295 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-14 09:19:00.644 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-14 09:19:00.663 +01:00 [INF] Hosting environment: Development
+2026-01-14 09:19:00.669 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-14 09:19:03.203 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 09:19:03.618 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 09:19:03.702 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:19:05.546 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 09:19:06.231 +01:00 [INF] Executed ViewResult - view Index executed in 696.5037ms.
+2026-01-14 09:19:06.274 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 2388.6358ms
+2026-01-14 09:19:06.283 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 09:19:06.295 +01:00 [INF] HTTP GET / responded 200 in 2801.1705 ms
+2026-01-14 09:19:06.330 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 3172.4846ms
+2026-01-14 09:19:06.559 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 09:19:06.596 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 36.729ms
+2026-01-14 09:19:06.614 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 09:19:06.799 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 184.8583ms
+2026-01-14 09:19:29.978 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-14 09:19:30.065 +01:00 [INF] CORS policy execution successful.
+2026-01-14 09:19:30.074 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 09:19:30.099 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:19:30.438 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 09:19:30.450 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-14 09:19:31.461 +01:00 [INF] Received HTTP response headers after 1002.5059ms - 200
+2026-01-14 09:19:31.467 +01:00 [INF] End processing HTTP request after 1036.9705ms - 200
+2026-01-14 09:19:31.748 +01:00 [INF] Executing ViewResult, running view ConfirmPayment.
+2026-01-14 09:19:31.839 +01:00 [INF] Executed ViewResult - view ConfirmPayment executed in 93.3626ms.
+2026-01-14 09:19:31.850 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 1747.9852ms
+2026-01-14 09:19:31.853 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-14 09:19:31.856 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 1786.1163 ms
+2026-01-14 09:19:31.860 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 1882.2397ms
+2026-01-14 09:19:31.888 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 09:19:31.895 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 7.5205ms
+2026-01-14 09:19:31.905 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 09:19:31.942 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.7325ms
+2026-01-14 09:19:34.174 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 09:19:34.189 +01:00 [INF] CORS policy execution successful.
+2026-01-14 09:19:34.197 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 09:19:34.208 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:20:46.917 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:20:46.920 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:20:47.970 +01:00 [INF] Received HTTP response headers after 1048.2955ms - 400
+2026-01-14 09:20:47.972 +01:00 [INF] End processing HTTP request after 1055.9351ms - 400
+2026-01-14 09:21:11.083 +01:00 [INF] Executing ViewResult, running view Error.
+2026-01-14 09:21:11.100 +01:00 [INF] Executed ViewResult - view Error executed in 28.5538ms.
+2026-01-14 09:21:11.102 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay) in 96889.3394ms
+2026-01-14 09:21:11.106 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 09:21:11.108 +01:00 [INF] HTTP POST /Payment/InitializeGlobalPay responded 200 in 96915.5534 ms
+2026-01-14 09:21:11.111 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - 200 null text/html; charset=utf-8 96937.5667ms
+2026-01-14 09:21:11.179 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 09:21:11.188 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 09:21:11.189 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 10.4775ms
+2026-01-14 09:21:11.244 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.1733ms
+2026-01-14 09:21:15.022 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/InitializeGlobalPay - application/x-www-form-urlencoded 366
+2026-01-14 09:21:15.042 +01:00 [INF] CORS policy execution successful.
+2026-01-14 09:21:15.045 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.InitializeGlobalPay (PhedPay)'
+2026-01-14 09:21:15.049 +01:00 [INF] Route matched with {action = "InitializeGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] InitializeGlobalPay(System.String, System.String, System.String, System.String, System.Decimal, System.String, System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 09:21:32.316 +01:00 [INF] Start processing HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:21:32.322 +01:00 [INF] Sending HTTP request POST https://paygw.globalpay.com.ng/globalpay-paymentgateway/api/paymentgateway/generate-payment-link
+2026-01-14 09:21:32.525 +01:00 [INF] Received HTTP response headers after 197.9218ms - 400
+2026-01-14 09:21:32.530 +01:00 [INF] End processing HTTP request after 244.9607ms - 400
+2026-01-14 16:24:22.501 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-14 16:24:23.991 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-14 16:24:23.996 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-14 16:24:24.213 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-14 16:24:24.224 +01:00 [INF] Hosting environment: Development
+2026-01-14 16:24:24.229 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-14 16:24:26.642 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 16:24:27.013 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 16:24:27.075 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 16:24:27.691 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 16:24:28.349 +01:00 [INF] Executed ViewResult - view Index executed in 662.648ms.
+2026-01-14 16:24:28.429 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1343.8836ms
+2026-01-14 16:24:28.437 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 16:24:28.459 +01:00 [INF] HTTP GET / responded 200 in 1531.3451 ms
+2026-01-14 16:24:28.526 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1912.4411ms
+2026-01-14 16:24:28.659 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-14 16:24:28.660 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 16:24:28.683 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 16:24:28.727 +01:00 [INF] The file /PhedPay.styles.css was not modified
+2026-01-14 16:24:28.747 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 87.3031ms
+2026-01-14 16:24:28.788 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 304 in 80.3251 ms
+2026-01-14 16:24:28.841 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 304 null text/css 181.7811ms
+2026-01-14 16:24:28.936 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 253.1352ms
+2026-01-14 17:24:49.711 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-14 17:24:49.852 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 17:24:49.899 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-14 17:24:49.985 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-14 17:24:50.106 +01:00 [INF] Executed ViewResult - view Index executed in 126.7791ms.
+2026-01-14 17:24:50.124 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 213.0672ms
+2026-01-14 17:24:50.134 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-14 17:24:50.143 +01:00 [INF] HTTP GET / responded 200 in 295.5275 ms
+2026-01-14 17:24:50.160 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 457.4269ms
+2026-01-14 17:24:50.989 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-14 17:24:51.099 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 111.5851ms
+2026-01-14 17:24:51.124 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-14 17:24:51.575 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 450.8747ms
