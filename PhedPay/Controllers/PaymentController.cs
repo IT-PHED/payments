@@ -4,6 +4,7 @@ using Newtonsoft.Json;
 using PhedPay.Data;
 using PhedPay.Models;
 using PhedPay.Services;
+using System.Diagnostics.Eventing.Reader;
 using System.Text;
 
 
@@ -352,6 +353,11 @@ namespace PhedPay.Controllers
             // 2. VERIFY PAYMENT (Call XpressPay)
 
             //if it contains GP, skip this and call GlobalPay requery instead
+            if (transactionId.StartsWith("GP", StringComparison.OrdinalIgnoreCase))
+            {
+                await VerifyGlobalPay(transactionId);
+                return "";
+            }
 
             var client = _httpClientFactory.CreateClient();
 
@@ -499,16 +505,19 @@ namespace PhedPay.Controllers
         }
 
         [HttpPost]
-        public async Task<IActionResult> RetryProcessPending(string TransactionReference)
+        public async Task<IActionResult> RetryProcessPending(string transactionReference)
         {
-           
-                await VerifyAndProcessPending(TransactionReference);
+            if (string.IsNullOrWhiteSpace(transactionReference))
+                return BadRequest("TransactionReference is required.");
+
+            await VerifyAndProcessPending(transactionReference);
 
             return Ok(new
             {
                 Message = "Pending transactions processed successfully."
             });
         }
+
 
         [HttpGet]
         public async Task<IActionResult> Requery(string AccountNo)
@@ -523,7 +532,7 @@ namespace PhedPay.Controllers
 
             // 2. Process Pending Transactions (Your existing logic)
             // We do this BEFORE fetching Oracle data to ensure the Oracle list includes any just-processed payments
-            foreach (var tra in transactions.Where(t => t.Status  == "Pending" || t.Status == "Failed"))
+            foreach (var tra in transactions.Where(t => t.Status  == "Pending" || t.Status == "Failed" && t.CreatedDate > DateTime.Now.AddDays(-30)))
             {
                 await VerifyAndProcessPending(tra.TransactionReference);
             }
@@ -692,7 +701,7 @@ namespace PhedPay.Controllers
         public async Task<IActionResult> InitializeGlobalPay(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address)
         {
             // 1. Generate Transaction Reference
-            var txRef = $"GP_{DateTime.Now:yyyyMMddHHmmss}_{new Random().Next(1000, 9999)}";
+            var txRef = $"GP_{DateTime.Now:yyyyMMddHHmmss}_{AccountNo}";
             // 1. Clean the raw input first
             string cleanName = (customerName ?? "").Trim();
 
