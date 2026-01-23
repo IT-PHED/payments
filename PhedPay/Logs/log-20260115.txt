@@ -277,3 +277,234 @@ WHERE [Id] = @p1;
 2026-01-15 10:36:27.884 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/VerifyGlobalPay?transactionId=GP_20260115101909_9490 - null null
 2026-01-15 10:36:27.900 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.VerifyGlobalPay (PhedPay)'
 2026-01-15 10:36:27.909 +01:00 [INF] Route matched with {action = "VerifyGlobalPay", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] VerifyGlobalPay(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:12:09.912 +01:00 [INF] User profile is available. Using 'C:\Users\jideofor.ujah\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-15 14:12:11.016 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-15 14:12:11.021 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-15 14:12:11.184 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-15 14:12:11.188 +01:00 [INF] Hosting environment: Development
+2026-01-15 14:12:11.190 +01:00 [INF] Content root path: C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay
+2026-01-15 14:12:12.582 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-15 14:12:12.872 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:12:12.930 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:12:13.647 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-15 14:12:14.166 +01:00 [INF] Executed ViewResult - view Index executed in 528.5704ms.
+2026-01-15 14:12:14.193 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1252.8906ms
+2026-01-15 14:12:14.199 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:12:14.209 +01:00 [INF] HTTP GET / responded 200 in 1422.6973 ms
+2026-01-15 14:12:14.231 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1672.0943ms
+2026-01-15 14:12:14.262 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:12:14.291 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-15 14:12:14.292 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 30.0905ms
+2026-01-15 14:12:14.435 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 143.9487ms
+2026-01-15 14:12:28.011 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 290
+2026-01-15 14:12:28.038 +01:00 [INF] CORS policy execution successful.
+2026-01-15 14:12:28.052 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:12:28.077 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:12:28.665 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:12:28.675 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:12:29.360 +01:00 [INF] Received HTTP response headers after 676.4271ms - 200
+2026-01-15 14:12:29.366 +01:00 [INF] End processing HTTP request after 709.6287ms - 200
+2026-01-15 14:12:29.625 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 1541.5087ms
+2026-01-15 14:12:29.634 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:12:29.640 +01:00 [ERR] HTTP POST /Payment/ValidateCustomer responded 500 in 1594.5989 ms
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadAndMoveToContent()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at PhedPay.Controllers.PaymentController.ValidateCustomer(PaymentInitiationViewModel model) in C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay\Controllers\PaymentController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-01-15 14:12:29.727 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadAndMoveToContent()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at PhedPay.Controllers.PaymentController.ValidateCustomer(PaymentInitiationViewModel model) in C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay\Controllers\PaymentController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-15 14:12:29.808 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 500 null text/html; charset=utf-8 1796.478ms
+2026-01-15 14:12:29.854 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-15 14:12:29.854 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:12:29.877 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 22.9707ms
+2026-01-15 14:12:29.911 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 58.1473ms
+2026-01-15 14:14:15.172 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/ValidateCustomer - null null
+2026-01-15 14:14:15.207 +01:00 [INF] Executing endpoint '405 HTTP Method Not Supported'
+2026-01-15 14:14:15.213 +01:00 [INF] Executed endpoint '405 HTTP Method Not Supported'
+2026-01-15 14:14:15.217 +01:00 [INF] HTTP GET /Payment/ValidateCustomer responded 405 in 19.2753 ms
+2026-01-15 14:14:15.222 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/ValidateCustomer - 405 0 null 51.4384ms
+2026-01-15 14:14:21.174 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:14:21.181 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 8.5345ms
+2026-01-15 14:14:23.242 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-15 14:14:23.254 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:14:23.258 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:14:23.275 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-15 14:14:23.305 +01:00 [INF] Executed ViewResult - view Index executed in 31.0048ms.
+2026-01-15 14:14:23.321 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 56.4198ms
+2026-01-15 14:14:23.324 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:14:23.328 +01:00 [INF] HTTP GET / responded 200 in 73.5943 ms
+2026-01-15 14:14:23.336 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 94.5001ms
+2026-01-15 14:14:23.375 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:14:23.387 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 11.694ms
+2026-01-15 14:14:32.268 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 290
+2026-01-15 14:14:32.285 +01:00 [INF] CORS policy execution successful.
+2026-01-15 14:14:32.288 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:14:32.292 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:14:32.304 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:14:32.309 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:14:33.266 +01:00 [INF] Received HTTP response headers after 954.4057ms - 200
+2026-01-15 14:14:33.270 +01:00 [INF] End processing HTTP request after 966.1896ms - 200
+2026-01-15 14:16:43.891 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 131594.8373ms
+2026-01-15 14:16:43.917 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:16:43.923 +01:00 [ERR] HTTP POST /Payment/ValidateCustomer responded 500 in 131634.4032 ms
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadAndMoveToContent()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at PhedPay.Controllers.PaymentController.ValidateCustomer(PaymentInitiationViewModel model) in C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay\Controllers\PaymentController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+2026-01-15 14:16:43.946 +01:00 [ERR] An unhandled exception has occurred while executing the request.
+Newtonsoft.Json.JsonReaderException: Unexpected character encountered while parsing value: C. Path '', line 0, position 0.
+   at Newtonsoft.Json.JsonTextReader.ParseValue()
+   at Newtonsoft.Json.JsonTextReader.Read()
+   at Newtonsoft.Json.JsonReader.ReadAndMoveToContent()
+   at Newtonsoft.Json.JsonReader.ReadForType(JsonContract contract, Boolean hasConverter)
+   at Newtonsoft.Json.Serialization.JsonSerializerInternalReader.Deserialize(JsonReader reader, Type objectType, Boolean checkAdditionalContent)
+   at Newtonsoft.Json.JsonSerializer.DeserializeInternal(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonSerializer.Deserialize(JsonReader reader, Type objectType)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject(String value, Type type, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value, JsonSerializerSettings settings)
+   at Newtonsoft.Json.JsonConvert.DeserializeObject[T](String value)
+   at PhedPay.Controllers.PaymentController.ValidateCustomer(PaymentInitiationViewModel model) in C:\Users\jideofor.ujah\source\repos\PhedPay\PhedPay\Controllers\PaymentController.cs:line 73
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ActionMethodExecutor.TaskOfIActionResultExecutor.Execute(ActionContext actionContext, IActionResultTypeMapper mapper, ObjectMethodExecutor executor, Object controller, Object[] arguments)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeActionMethodAsync>g__Awaited|12_0(ControllerActionInvoker invoker, ValueTask`1 actionResultValueTask)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeNextActionFilterAsync>g__Awaited|10_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Rethrow(ActionExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker.<InvokeInnerFilterAsync>g__Awaited|13_0(ControllerActionInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeNextResourceFilter>g__Awaited|25_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Rethrow(ResourceExecutedContextSealed context)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.Next(State& next, Scope& scope, Object& state, Boolean& isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeFilterPipelineAsync>g__Awaited|20_0(ResourceInvoker invoker, Task lastTask, State next, Scope scope, Object state, Boolean isCompleted)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Mvc.Infrastructure.ResourceInvoker.<InvokeAsync>g__Logged|17_1(ResourceInvoker invoker)
+   at Microsoft.AspNetCore.Routing.EndpointMiddleware.<Invoke>g__AwaitRequestTask|7_0(Endpoint endpoint, Task requestTask, ILogger logger)
+   at Microsoft.AspNetCore.Authorization.AuthorizationMiddleware.Invoke(HttpContext context)
+   at Serilog.AspNetCore.RequestLoggingMiddleware.Invoke(HttpContext httpContext)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware.Invoke(HttpContext context)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddlewareImpl.Invoke(HttpContext context)
+2026-01-15 14:16:43.976 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 500 null text/html; charset=utf-8 131707.5853ms
+2026-01-15 14:17:04.492 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-15 14:17:04.517 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:17:04.522 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:17:04.530 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-15 14:17:04.549 +01:00 [INF] Executed ViewResult - view Index executed in 18.8697ms.
+2026-01-15 14:17:04.568 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 38.9479ms
+2026-01-15 14:17:04.571 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:17:04.574 +01:00 [INF] HTTP GET / responded 200 in 56.8809 ms
+2026-01-15 14:17:04.582 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 92.2651ms
+2026-01-15 14:17:04.671 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-15 14:17:04.672 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:17:04.694 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 22.3826ms
+2026-01-15 14:17:04.720 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 48.7159ms
+2026-01-15 14:17:15.037 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-15 14:17:15.057 +01:00 [INF] CORS policy execution successful.
+2026-01-15 14:17:15.061 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:17:15.065 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:17:15.074 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:17:15.080 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:17:15.643 +01:00 [INF] Received HTTP response headers after 557.4396ms - 200
+2026-01-15 14:17:15.648 +01:00 [INF] End processing HTTP request after 573.8871ms - 200
+2026-01-15 14:17:23.137 +01:00 [INF] Executing ViewResult, running view ConfirmPayment.
+2026-01-15 14:17:23.234 +01:00 [INF] Executed ViewResult - view ConfirmPayment executed in 97.7514ms.
+2026-01-15 14:17:23.237 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay) in 8166.1705ms
+2026-01-15 14:17:23.241 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:17:23.243 +01:00 [INF] HTTP POST /Payment/ValidateCustomer responded 200 in 8182.8296 ms
+2026-01-15 14:17:23.250 +01:00 [INF] Request finished HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - 200 null text/html; charset=utf-8 8213.7457ms
+2026-01-15 14:17:23.328 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-15 14:17:23.331 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:17:23.353 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 22.1869ms
+2026-01-15 14:17:23.362 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 33.4912ms
+2026-01-15 14:18:10.252 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-15 14:18:10.276 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:18:10.291 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:18:10.297 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-15 14:18:10.310 +01:00 [INF] Executed ViewResult - view Index executed in 12.7021ms.
+2026-01-15 14:18:10.324 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 27.7987ms
+2026-01-15 14:18:10.327 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-15 14:18:10.329 +01:00 [INF] HTTP GET / responded 200 in 53.1734 ms
+2026-01-15 14:18:10.333 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 81.0791ms
+2026-01-15 14:18:10.382 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-15 14:18:10.383 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-15 14:18:10.399 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 16.9264ms
+2026-01-15 14:18:10.421 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 39.2691ms
+2026-01-15 14:18:17.622 +01:00 [INF] Request starting HTTP/2 POST https://localhost:7251/Payment/ValidateCustomer - application/x-www-form-urlencoded 291
+2026-01-15 14:18:17.635 +01:00 [INF] CORS policy execution successful.
+2026-01-15 14:18:17.638 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.ValidateCustomer (PhedPay)'
+2026-01-15 14:18:17.642 +01:00 [INF] Route matched with {action = "ValidateCustomer", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] ValidateCustomer(PhedPay.Models.PaymentInitiationViewModel) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-15 14:18:17.649 +01:00 [INF] Start processing HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:18:17.653 +01:00 [INF] Sending HTTP request POST https://collections.phed.com.ng/dlenhanceapi/Collection/GetcustomerInfo
+2026-01-15 14:18:17.913 +01:00 [INF] Received HTTP response headers after 256.182ms - 200
+2026-01-15 14:18:17.917 +01:00 [INF] End processing HTTP request after 267.762ms - 200
