@@ -247,6 +247,35 @@
     </div>
 </div>
 
+<div class="modal fade" id="alertModal" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+
+            <div class="modal-header">
+                <h5 class="modal-title" id="alertModalTitle">Alert</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+            </div>
+
+            <div class="modal-body" id="alertModalMessage">
+                If you are having difficulty getting your token after a successful payment
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                    Close
+                </button>
+
+                <a href="#" id="alertModalAction" class="btn btn-primary">
+                    Check token here
+                </a>
+            </div>
+
+        </div>
+    </div>
+</div>
+
+
+
 @section Scripts {
     <partial name="_ValidationScriptsPartial" />
     <script>
@@ -296,5 +325,17 @@
             });
         });
 
+    </script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const alertModal = new bootstrap.Modal(document.getElementById("alertModal"));
+
+            document.getElementById("alertModalTitle").innerText = "Attention";
+            document.getElementById("alertModalMessage").innerText = "If you are having difficulty getting your token after a successful payment";
+            document.getElementById("alertModalAction").href = "/Payment/Requery";
+            document.getElementById("alertModalAction").innerText = "Check token here";
+
+            alertModal.show();
+        });
     </script>
 }

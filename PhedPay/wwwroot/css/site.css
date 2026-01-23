@@ -124,3 +124,61 @@ footer {
         order: 2;
     }
 }
+
+
+@media (max-width: 768px) {
+    .responsive-table thead
+
+{
+    display: none;
+}
+
+.responsive-table tr {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 12px;
+    padding: 12px;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 2px 8px rgba(0,0,0,.08);
+}
+
+.responsive-table td {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+    border: none;
+    font-size: 14px;
+}
+
+    .responsive-table td::before {
+        content: attr(data-label);
+        font-weight: 600;
+        color: #666;
+    }
+
+
+    .responsive-table td[data-label="Action"] {
+        order: 1;
+    }
+
+    .responsive-table td[data-label="Amount"] {
+        order: 2;
+        font-weight: 700;
+    }
+
+    .responsive-table td[data-label="Date"] {
+        order: 3;
+    }
+
+    .responsive-table td[data-label="Ref"] {
+        order: 4;
+    }
+
+    .responsive-table td[data-label="Status"] {
+        order: 5;
+    }
+
+}

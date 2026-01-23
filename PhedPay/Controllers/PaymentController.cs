@@ -532,7 +532,7 @@ namespace PhedPay.Controllers
 
             // 2. Process Pending Transactions (Your existing logic)
             // We do this BEFORE fetching Oracle data to ensure the Oracle list includes any just-processed payments
-            foreach (var tra in transactions.Where(t => t.Status  == "Pending" || t.Status == "Failed" && t.CreatedDate > DateTime.Now.AddDays(-30)))
+           foreach (var tra in transactions.Where(t => t.Status  == "Pending" || t.Status == "Failed" && t.CreatedDate > DateTime.Now.AddDays(-30)))
             {
                 await VerifyAndProcessPending(tra.TransactionReference);
             }
