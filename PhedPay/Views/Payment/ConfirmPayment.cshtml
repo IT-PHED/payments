@@ -22,7 +22,7 @@
             left: 0;
             right: 0;
             height: 3px;
-            background: #e9ecef;
+          
             z-index: -1;
         }
 
@@ -42,7 +42,6 @@
         display: flex;
         flex-direction: column;
         align-items: center;
-        background: white;
         padding: 0 10px;
     }
 
@@ -283,7 +282,7 @@
                     <span class="detail-label">
                         <i class="bi bi-telephone me-2"></i>Phone Number
                     </span>
-                    <span class="detail-value">@ViewBag.Phone</span>
+                    <span class="detail-value">@ViewBag.PhoneNumber</span>
                 </div>
 
                 <div class="detail-row">
@@ -293,13 +292,6 @@
                     <span class="detail-value">@ViewBag.Email</span>
                 </div>
             </div>
-
-            <!-- Amount Highlight -->
-            <div class="amount-highlight">
-                <div class="amount-label">Total Amount to Pay</div>
-                <div class="amount-value">₦@ViewBag.Amount</div>
-            </div>
-
             <!-- Warning Box -->
             <div class="warning-box">
                 <div class="d-flex">
@@ -311,31 +303,46 @@
                 </div>
             </div>
 
+
             <!-- Payment Form -->
             <form asp-action="InitializePayment" method="post" class="js-loading-form">
-               
-
 
                 <input type="hidden" id="h_AccountNo" name="AccountNo" value="@ViewBag.AccountNo" />
                 <input type="hidden" id="h_MeterNo" name="MeterNo" value="@ViewBag.MeterNo" />
-                <input type="hidden" id="h_Phone" name="Phone" value="@ViewBag.Phone" />
+                <input type="hidden" id="h_Phone" name="Phone" value="@ViewBag.PhoneNumber" />
                 <input type="hidden" id="h_Email" name="Email" value="@ViewBag.Email" />
-                <input type="hidden" id="h_Amount" name="Amount" value="@ViewBag.Amount" />
                 <input type="hidden" id="h_Name" name="CustomerName" value="@ViewBag.CustomerName" />
                 <input type="hidden" id="h_Address" name="Address" value="@ViewBag.Address" />
+
+                <div class="mb-3">
+                    <label for="PaymentPurpose" class="form-label">Payment Purpose</label>
+                    <select id="PaymentPurpose" name="PaymentPurpose" class="form-select" required>
+                        <option value="14" selected>Energy</option>
+                        @if (ViewBag.Payables != null)
+                        {
+                            foreach (var payable in ViewBag.Payables)
+                            {
+                                <option value="@payable.purposeId">@payable.purposeName Total of @payable.totalAmount  </option>
+                            }
+                        }
+                    </select>
+                </div>
+
+                <div class="mb-3">
+                    <label for="Amount" class="form-label">Amount (₦)</label>
+                    <input type="number" id="Amount" name="Amount" step="0.01" class="form-control" value="" min="100" required />
+                </div>
 
                 <div class="d-grid gap-3">
                     <button type="submit" class="btn btn-success submit-btn">
                         <i class="bi bi-credit-card me-2"></i>Proceed to Payment Xpress
                     </button>
-@* 
                     <button type="button" class="btn btn-primary submit-btn" onclick="payWithInterswitch()">
                         <i class="bi bi-credit-card-2-front me-2"></i>Proceed to Payment Interswitch
                     </button>
                     <button type="submit" asp-action="InitializeGlobalPay" formtarget="_blank" class="btn btn-danger submit-btn">
                         <i class="bi bi-bank me-2"></i>Proceed to Zenith GlobalPay
-                    </button> *@
-
+                    </button>
                     <a asp-action="Index" class="btn btn-outline-secondary cancel-btn">
                         <i class="bi bi-arrow-left me-2"></i>Go Back
                     </a>
@@ -388,6 +395,23 @@
          function paymentCallback(response) {
                 console.log(response);
             }
+            //auto population of amount on the form
+            document.getElementById('PaymentPurpose').addEventListener('change', function() {
+            var selectedOption = this.options[this.selectedIndex];
+            var amountInput = document.getElementById('Amount');
+
+            if (this.value != '14') {
+                // Energy selected - keep current amount or reset
+                // Extract amount from option text (after #)
+                var optionText = selectedOption.text;
+                var amount = optionText.split('#')[1];
+
+                if (amount) {
+                    var totalAmount = parseFloat(amount) + 50;
+                    amountInput.value = totalAmount.toFixed(2);
+                }
+            }
+        });
 </script>
  
 }
