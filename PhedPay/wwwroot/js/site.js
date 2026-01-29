@@ -1,6 +1,6 @@
 ﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
 // for details on configuring this project to bundle and minify static web assets.
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
 // Write your JavaScript code.
 document.addEventListener("DOMContentLoaded", () => {
 
@@ -30,4 +30,18 @@ function setLoading(button, isLoading) {
         spinner?.classList.add("d-none");
         text?.classList.remove("d-none");
     }
+}
+(function () {
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+        document.documentElement.setAttribute("data-theme", savedTheme);
+    }
+})();
+
+function toggleDarkMode() {
+    const html = document.documentElement;
+    const isDark = html.getAttribute("data-theme") === "dark";
+
+    html.setAttribute("data-theme", isDark ? "light" : "dark");
+    localStorage.setItem("theme", isDark ? "light" : "dark");
 }

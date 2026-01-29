@@ -1176,3 +1176,723 @@ ORDER BY [p].[CreatedDate] DESC
 2026-01-23 10:56:54.527 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 3.3495 ms
 2026-01-23 10:56:54.537 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 37.4019ms
 2026-01-23 10:56:54.553 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:17:01.373 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-23 11:17:03.066 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-23 11:17:03.091 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-23 11:17:03.182 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-23 11:17:03.185 +01:00 [INF] Hosting environment: Development
+2026-01-23 11:17:03.186 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2026-01-23 11:17:04.011 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:17:04.251 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:17:04.301 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:17:05.017 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:17:05.555 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=zw81nweUyuJe3akcEm4O9CXLWW346TCAO32AVmN8y3o - null null
+2026-01-23 11:17:05.557 +01:00 [INF] Executed ViewResult - view Index executed in 525.2548ms.
+2026-01-23 11:17:05.591 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 1284.5958ms
+2026-01-23 11:17:05.602 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:17:05.615 +01:00 [INF] HTTP GET / responded 200 in 1410.7688 ms
+2026-01-23 11:17:05.618 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:17:05.628 +01:00 [INF] HTTP GET /css/site.css responded 200 in 51.6904 ms
+2026-01-23 11:17:05.639 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=zw81nweUyuJe3akcEm4O9CXLWW346TCAO32AVmN8y3o - 200 3449 text/css 81.8467ms
+2026-01-23 11:17:05.640 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1644.6366ms
+2026-01-23 11:17:05.754 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=pvFqMdVxZVcExV5wl3v6Zs0bd-7OUR_kBClRyglCbGQ - null null
+2026-01-23 11:17:05.764 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:17:05.766 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:17:05.777 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:17:05.816 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 52.3499ms
+2026-01-23 11:17:05.822 +01:00 [INF] HTTP GET /js/site.js responded 304 in 49.2021 ms
+2026-01-23 11:17:05.862 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=pvFqMdVxZVcExV5wl3v6Zs0bd-7OUR_kBClRyglCbGQ - 304 null text/javascript 108.3799ms
+2026-01-23 11:17:05.950 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 184.7569ms
+2026-01-23 11:17:59.373 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:17:59.399 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:17:59.406 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:17:59.430 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:17:59.482 +01:00 [INF] Executed ViewResult - view Index executed in 52.5934ms.
+2026-01-23 11:17:59.491 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 80.2717ms
+2026-01-23 11:17:59.503 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:17:59.511 +01:00 [INF] HTTP GET / responded 200 in 112.0427 ms
+2026-01-23 11:17:59.527 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 154.3266ms
+2026-01-23 11:17:59.548 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:17:59.541 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:17:59.555 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:17:59.549 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:17:59.591 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=pvFqMdVxZVcExV5wl3v6Zs0bd-7OUR_kBClRyglCbGQ - null null
+2026-01-23 11:17:59.660 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:17:59.690 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:17:59.694 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:17:59.701 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:17:59.705 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 35.4682 ms
+2026-01-23 11:17:59.707 +01:00 [INF] HTTP GET /js/site.js responded 200 in 17.2141 ms
+2026-01-23 11:17:59.710 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 67.6422 ms
+2026-01-23 11:17:59.718 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 170.5315ms
+2026-01-23 11:17:59.727 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=pvFqMdVxZVcExV5wl3v6Zs0bd-7OUR_kBClRyglCbGQ - 200 1126 text/javascript 136.0226ms
+2026-01-23 11:17:59.737 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 195.5781ms
+2026-01-23 11:17:59.701 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 46.6225 ms
+2026-01-23 11:17:59.570 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:17:59.591 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:17:59.796 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 245.9003ms
+2026-01-23 11:17:59.598 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-01-23 11:17:59.607 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-01-23 11:17:59.623 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:17:59.636 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:17:59.655 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:17:59.863 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 240.2688ms
+2026-01-23 11:17:59.895 +01:00 [INF] HTTP GET /css/site.css responded 200 in 272.2371 ms
+2026-01-23 11:17:59.938 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 200 3605 text/css 396.806ms
+2026-01-23 11:17:59.959 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 323.439ms
+2026-01-23 11:17:59.959 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-01-23 11:17:59.972 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-01-23 11:17:59.954 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:17:59.986 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 154.6618 ms
+2026-01-23 11:17:59.988 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 142.7286 ms
+2026-01-23 11:17:59.990 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 184.2776 ms
+2026-01-23 11:17:59.993 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 397.3634ms
+2026-01-23 11:17:59.997 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 389.992ms
+2026-01-23 11:18:00.000 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 409.2137ms
+2026-01-23 11:18:00.015 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:18:00.029 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 228.4135 ms
+2026-01-23 11:18:00.035 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 465.4483ms
+2026-01-23 11:18:00.057 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:18:00.089 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:18:00.095 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 29.9706 ms
+2026-01-23 11:18:00.101 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 45.4052ms
+2026-01-23 11:19:01.512 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:19:01.537 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:01.545 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:19:01.567 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:19:01.691 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:19:01.696 +01:00 [INF] Executed ViewResult - view Index executed in 130.3087ms.
+2026-01-23 11:19:01.707 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 155.0057ms
+2026-01-23 11:19:01.708 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:01.713 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:01.717 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:19:01.722 +01:00 [INF] HTTP GET / responded 200 in 185.1436 ms
+2026-01-23 11:19:01.733 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:19:01.738 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 225.8899ms
+2026-01-23 11:19:01.797 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:19:01.766 +01:00 [INF] Executed ViewResult - view Index executed in 33.054ms.
+2026-01-23 11:19:01.835 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - null null
+2026-01-23 11:19:01.836 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:19:01.832 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:19:01.844 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 112.0848ms
+2026-01-23 11:19:01.835 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:19:01.930 +01:00 [INF] HTTP GET /css/site.css responded 304 in 98.2391 ms
+2026-01-23 11:19:01.933 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:01.946 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 304 null text/css 148.924ms
+2026-01-23 11:19:01.951 +01:00 [INF] HTTP GET / responded 200 in 242.5773 ms
+2026-01-23 11:19:01.959 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 123.923ms
+2026-01-23 11:19:01.895 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:19:01.965 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 274.4906ms
+2026-01-23 11:19:01.928 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 92.9147ms
+2026-01-23 11:19:01.974 +01:00 [INF] HTTP GET /js/site.js responded 200 in 83.1029 ms
+2026-01-23 11:19:01.991 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - 200 1580 text/javascript 157.8217ms
+2026-01-23 11:19:05.308 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:19:05.346 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:05.356 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:19:05.366 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:19:05.433 +01:00 [INF] Executed ViewResult - view Index executed in 68.148ms.
+2026-01-23 11:19:05.445 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 81.1353ms
+2026-01-23 11:19:05.452 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:05.461 +01:00 [INF] HTTP GET / responded 200 in 115.0188 ms
+2026-01-23 11:19:05.477 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 169.5948ms
+2026-01-23 11:19:05.495 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:19:05.495 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:19:05.530 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:19:05.538 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:19:05.530 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - null null
+2026-01-23 11:19:05.533 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-01-23 11:19:05.538 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-01-23 11:19:05.696 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:19:05.496 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:19:05.737 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-01-23 11:19:05.738 +01:00 [INF] HTTP GET /js/site.js responded 200 in 52.7392 ms
+2026-01-23 11:19:05.749 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 18.5320 ms
+2026-01-23 11:19:05.539 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:19:05.754 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - 200 1580 text/javascript 224.5408ms
+2026-01-23 11:19:05.758 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 225.3038ms
+2026-01-23 11:19:05.493 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:19:05.783 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 245.0482ms
+2026-01-23 11:19:05.495 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:19:05.665 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:19:05.816 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:19:05.809 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:19:05.819 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 184.7244 ms
+2026-01-23 11:19:05.824 +01:00 [INF] HTTP GET /css/site.css responded 200 in 9.7340 ms
+2026-01-23 11:19:05.828 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 33.1667 ms
+2026-01-23 11:19:05.832 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 303.2594ms
+2026-01-23 11:19:05.836 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 200 3605 text/css 341.6797ms
+2026-01-23 11:19:05.844 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 350.6965ms
+2026-01-23 11:19:05.577 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:19:05.621 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:19:05.672 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 138.6171ms
+2026-01-23 11:19:05.869 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 305.7510 ms
+2026-01-23 11:19:05.873 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 348.0372 ms
+2026-01-23 11:19:05.750 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:19:05.883 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 388.3325ms
+2026-01-23 11:19:05.890 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 395.2702ms
+2026-01-23 11:19:05.896 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 151.6093 ms
+2026-01-23 11:19:05.724 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-01-23 11:19:05.965 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 470.0084ms
+2026-01-23 11:19:05.974 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 263.6758 ms
+2026-01-23 11:19:06.030 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 497.7551ms
+2026-01-23 11:19:06.053 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:19:06.077 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:19:06.080 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 7.2846 ms
+2026-01-23 11:19:06.083 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 30.9515ms
+2026-01-23 11:19:15.308 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:19:15.317 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:19:15.321 +01:00 [INF] HTTP GET /css/site.css responded 304 in 4.0006 ms
+2026-01-23 11:19:15.327 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 304 null text/css 19.6566ms
+2026-01-23 11:19:15.339 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:19:15.348 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 2.1483 ms
+2026-01-23 11:19:15.353 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 14.2479ms
+2026-01-23 11:19:15.362 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:19:29.220 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:19:29.225 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:29.226 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:19:29.232 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:19:29.239 +01:00 [INF] Executed ViewResult - view Index executed in 6.9458ms.
+2026-01-23 11:19:29.242 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 10.185ms
+2026-01-23 11:19:29.245 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:19:29.253 +01:00 [INF] HTTP GET / responded 200 in 28.7662 ms
+2026-01-23 11:19:29.262 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 42.2481ms
+2026-01-23 11:19:29.271 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:19:29.269 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:19:29.269 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:19:29.289 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.4284 ms
+2026-01-23 11:19:29.312 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:19:29.269 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:19:29.270 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:19:29.336 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 64.4839ms
+2026-01-23 11:19:29.338 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 41.1278 ms
+2026-01-23 11:19:29.269 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:19:29.323 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:19:29.359 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:19:29.362 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 93.1465ms
+2026-01-23 11:19:29.356 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:19:29.379 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 58.5607 ms
+2026-01-23 11:19:29.343 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:19:29.383 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:19:29.397 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 49.1005 ms
+2026-01-23 11:19:29.399 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 130.8006ms
+2026-01-23 11:19:29.402 +01:00 [INF] HTTP GET /css/site.css responded 200 in 59.8108 ms
+2026-01-23 11:19:29.403 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 32.6314 ms
+2026-01-23 11:19:29.405 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 135.4969ms
+2026-01-23 11:19:29.414 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 200 3605 text/css 145.7841ms
+2026-01-23 11:19:29.418 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 149.2805ms
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:19:29.500 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 27.4641ms
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - null null
+2026-01-23 11:19:29.526 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-01-23 11:19:29.575 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 102.1686ms
+2026-01-23 11:19:29.586 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:19:29.473 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-01-23 11:19:29.491 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:19:29.598 +01:00 [INF] HTTP GET /js/site.js responded 200 in 14.6034 ms
+2026-01-23 11:19:29.590 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 76.9871 ms
+2026-01-23 11:19:29.612 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-01-23 11:19:29.613 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 135.6842 ms
+2026-01-23 11:19:29.620 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - 200 1580 text/javascript 146.8009ms
+2026-01-23 11:19:29.626 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 152.7904ms
+2026-01-23 11:19:29.631 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 25.8530 ms
+2026-01-23 11:19:29.638 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 164.9338ms
+2026-01-23 11:19:29.661 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 188.2928ms
+2026-01-23 11:19:29.739 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:19:29.750 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:19:29.754 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 7.4159 ms
+2026-01-23 11:19:29.763 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 26.165ms
+2026-01-23 11:20:14.019 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:20:14.041 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:20:14.052 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:20:14.068 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:20:14.271 +01:00 [INF] Executed ViewResult - view Index executed in 208.6925ms.
+2026-01-23 11:20:14.273 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:20:14.273 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - null null
+2026-01-23 11:20:14.301 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 240.429ms
+2026-01-23 11:20:14.306 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:20:14.313 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:20:14.317 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:20:14.319 +01:00 [INF] HTTP GET /css/site.css responded 304 in 13.1229 ms
+2026-01-23 11:20:14.320 +01:00 [INF] HTTP GET /js/site.js responded 304 in 6.9228 ms
+2026-01-23 11:20:14.324 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 304 null text/css 51.8231ms
+2026-01-23 11:20:14.321 +01:00 [INF] HTTP GET / responded 200 in 280.1541 ms
+2026-01-23 11:20:14.334 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=ZrxfX1sHi9BMt7mEUgegHog8OKRE2KxlIyDda67WivA - 304 null text/javascript 60.5785ms
+2026-01-23 11:20:14.330 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:20:14.351 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 332.4884ms
+2026-01-23 11:20:14.359 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.3573 ms
+2026-01-23 11:20:14.368 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 38.236ms
+2026-01-23 11:20:14.373 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:20:14.533 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:20:14.535 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:20:14.561 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 26.9423ms
+2026-01-23 11:20:14.570 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 37.1793ms
+2026-01-23 11:20:49.417 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:20:49.450 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:20:49.462 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:20:49.476 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:20:49.561 +01:00 [INF] Executed ViewResult - view Index executed in 84.9097ms.
+2026-01-23 11:20:49.583 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 107.6074ms
+2026-01-23 11:20:49.591 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:20:49.598 +01:00 [INF] HTTP GET / responded 200 in 147.9793 ms
+2026-01-23 11:20:49.609 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 193.0015ms
+2026-01-23 11:20:49.623 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:20:49.623 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:20:49.657 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 31.0233ms
+2026-01-23 11:20:49.623 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=Kb-AOofhf7E1FjwVLMWDFVT5wDJJrCfFlaG5uuHNjBs - null null
+2026-01-23 11:20:49.677 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:20:49.699 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:20:49.701 +01:00 [INF] HTTP GET /css/site.css responded 304 in 24.9851 ms
+2026-01-23 11:20:49.705 +01:00 [INF] HTTP GET /js/site.js responded 200 in 9.9635 ms
+2026-01-23 11:20:49.711 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 304 null text/css 88.6944ms
+2026-01-23 11:20:49.718 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=Kb-AOofhf7E1FjwVLMWDFVT5wDJJrCfFlaG5uuHNjBs - 200 1578 text/javascript 95.6242ms
+2026-01-23 11:20:49.776 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:20:49.785 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.5012 ms
+2026-01-23 11:20:49.793 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 17.4851ms
+2026-01-23 11:20:49.805 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:20:49.960 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:20:50.016 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.953ms
+2026-01-23 11:21:29.694 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:21:29.735 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.744 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:21:29.755 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:21:29.792 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:21:29.809 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.815 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:21:29.821 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:21:29.890 +01:00 [INF] Executed ViewResult - view Index executed in 138.7095ms.
+2026-01-23 11:21:29.893 +01:00 [INF] Executed ViewResult - view Index executed in 71.4005ms.
+2026-01-23 11:21:29.898 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 147.474ms
+2026-01-23 11:21:29.902 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 81.7596ms
+2026-01-23 11:21:29.906 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.910 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:21:29.911 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.914 +01:00 [INF] HTTP GET / responded 200 in 178.7412 ms
+2026-01-23 11:21:29.922 +01:00 [INF] HTTP GET / responded 200 in 113.1025 ms
+2026-01-23 11:21:29.922 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.925 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 231.2003ms
+2026-01-23 11:21:29.927 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 134.8363ms
+2026-01-23 11:21:29.928 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:21:29.939 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:21:29.947 +01:00 [INF] Executed ViewResult - view Index executed in 7.9126ms.
+2026-01-23 11:21:29.961 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 22.5054ms
+2026-01-23 11:21:29.968 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:29.981 +01:00 [INF] HTTP GET / responded 200 in 57.7849 ms
+2026-01-23 11:21:29.997 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - null null
+2026-01-23 11:21:29.999 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:21:30.000 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 90.6411ms
+2026-01-23 11:21:30.023 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:21:30.012 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:21:30.034 +01:00 [INF] HTTP GET /js/site.js responded 200 in 14.8320 ms
+2026-01-23 11:21:30.037 +01:00 [INF] HTTP GET /css/site.css responded 304 in 24.9036 ms
+2026-01-23 11:21:30.044 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 200 1478 text/javascript 45.043ms
+2026-01-23 11:21:30.051 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=8vla1ztoP_Yv3b8ifrIXs9RfmLXL1ki7CK1-Fd02gFQ - 304 null text/css 54.3121ms
+2026-01-23 11:21:30.181 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:21:30.188 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.2503 ms
+2026-01-23 11:21:30.192 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 10.6063ms
+2026-01-23 11:21:30.198 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:21:30.280 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:21:30.280 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:21:30.288 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 8.0463ms
+2026-01-23 11:21:30.314 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 34.501ms
+2026-01-23 11:21:37.871 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:21:37.891 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:37.900 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:21:37.911 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:21:37.999 +01:00 [INF] Executed ViewResult - view Index executed in 89.7174ms.
+2026-01-23 11:21:38.009 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 101.6926ms
+2026-01-23 11:21:38.015 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:21:38.022 +01:00 [INF] HTTP GET / responded 200 in 130.9196 ms
+2026-01-23 11:21:38.031 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 159.6992ms
+2026-01-23 11:21:38.058 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:21:38.060 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:21:38.061 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:21:38.072 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:21:38.086 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 26.0244ms
+2026-01-23 11:21:38.099 +01:00 [INF] HTTP GET /js/site.js responded 304 in 27.6387 ms
+2026-01-23 11:21:38.117 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 56.577ms
+2026-01-23 11:21:38.129 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 71.5984ms
+2026-01-23 11:21:38.158 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:21:38.163 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.2127 ms
+2026-01-23 11:21:38.167 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 9.5222ms
+2026-01-23 11:21:38.178 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:23:10.383 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery - null null
+2026-01-23 11:23:10.443 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:23:10.489 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:23:10.570 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:23:10.609 +01:00 [INF] Executed ViewResult - view Requery executed in 43.349ms.
+2026-01-23 11:23:10.621 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 124.3017ms
+2026-01-23 11:23:10.624 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:23:10.627 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 193.8037 ms
+2026-01-23 11:23:10.633 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=FOk6TLjjJa2T5Tlzr_O0N2zRjXlt5AVEXsUyHpnNp1Q - null null
+2026-01-23 11:23:10.633 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery - 200 null text/html; charset=utf-8 250.8468ms
+2026-01-23 11:23:10.649 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:23:10.658 +01:00 [INF] HTTP GET /css/site.css responded 200 in 11.7129 ms
+2026-01-23 11:23:10.661 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=FOk6TLjjJa2T5Tlzr_O0N2zRjXlt5AVEXsUyHpnNp1Q - 200 3612 text/css 28.2707ms
+2026-01-23 11:23:10.872 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:23:10.875 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:23:10.874 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:23:10.884 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:23:10.925 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 50.8495ms
+2026-01-23 11:23:10.945 +01:00 [INF] HTTP GET /js/site.js responded 304 in 61.5093 ms
+2026-01-23 11:23:10.952 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 76.884ms
+2026-01-23 11:23:10.969 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 98.4686ms
+2026-01-23 11:25:51.291 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery - null null
+2026-01-23 11:25:51.316 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:25:51.319 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:25:51.322 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:25:51.359 +01:00 [INF] Executed ViewResult - view Requery executed in 37.3946ms.
+2026-01-23 11:25:51.385 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 64.0818ms
+2026-01-23 11:25:51.392 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:25:51.397 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:25:51.454 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:25:51.501 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:25:51.611 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:25:51.393 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:25:51.392 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:25:51.644 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 166.2924 ms
+2026-01-23 11:25:51.651 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 340.7821 ms
+2026-01-23 11:25:51.674 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 277.1971ms
+2026-01-23 11:25:51.396 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:25:51.685 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery - 200 null text/html; charset=utf-8 393.9751ms
+2026-01-23 11:25:51.429 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:25:51.453 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:25:51.474 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:25:51.724 +01:00 [INF] HTTP GET /css/site.css responded 200 in 301.5624 ms
+2026-01-23 11:25:51.751 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:25:51.769 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:25:51.774 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 200 3648 text/css 381.9226ms
+2026-01-23 11:25:51.779 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 44.9801 ms
+2026-01-23 11:25:51.787 +01:00 [INF] HTTP GET /js/site.js responded 200 in 24.5488 ms
+2026-01-23 11:25:51.502 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:25:51.928 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 476.2199ms
+2026-01-23 11:25:51.931 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 200 1478 text/javascript 457.0069ms
+2026-01-23 11:25:51.976 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 474.0661ms
+2026-01-23 11:25:51.626 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:25:51.706 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:25:51.620 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 119.5911ms
+2026-01-23 11:25:51.988 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 452.9296 ms
+2026-01-23 11:25:51.990 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 288.1239 ms
+2026-01-23 11:25:51.680 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:25:51.996 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 541.604ms
+2026-01-23 11:25:51.999 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 603.3764ms
+2026-01-23 11:25:52.002 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 342.5882 ms
+2026-01-23 11:25:52.013 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 621.7575ms
+2026-01-23 11:25:52.051 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:25:52.067 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:25:52.074 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 13.5138 ms
+2026-01-23 11:25:52.079 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 28.8683ms
+2026-01-23 11:26:27.711 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:26:27.746 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:26:27.760 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:26:27.766 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:26:27.786 +01:00 [INF] Executed ViewResult - view Index executed in 17.0615ms.
+2026-01-23 11:26:27.841 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:26:27.843 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:26:27.844 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 79.1041ms
+2026-01-23 11:26:27.856 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:26:27.867 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:26:27.873 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:26:27.886 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:26:27.888 +01:00 [INF] HTTP GET / responded 200 in 141.9733 ms
+2026-01-23 11:26:27.883 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:26:27.919 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 206.7171ms
+2026-01-23 11:26:27.881 +01:00 [INF] HTTP GET /js/site.js responded 304 in 13.8196 ms
+2026-01-23 11:26:27.877 +01:00 [INF] HTTP GET /css/site.css responded 304 in 20.8738 ms
+2026-01-23 11:26:27.955 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 71.7959ms
+2026-01-23 11:26:27.983 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 141.2663ms
+2026-01-23 11:26:27.988 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 304 null text/css 146.89ms
+2026-01-23 11:26:27.957 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 70.0791ms
+2026-01-23 11:26:47.073 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-23 11:26:47.892 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-23 11:26:47.898 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-23 11:26:48.077 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-23 11:26:48.081 +01:00 [INF] Hosting environment: Development
+2026-01-23 11:26:48.085 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2026-01-23 11:26:48.824 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:26:49.069 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:26:49.138 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:26:49.617 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:26:49.996 +01:00 [INF] Executed ViewResult - view Index executed in 368.7708ms.
+2026-01-23 11:26:50.027 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 880.562ms
+2026-01-23 11:26:50.036 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:26:50.062 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:26:50.065 +01:00 [INF] HTTP GET / responded 200 in 1043.4775 ms
+2026-01-23 11:26:50.086 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:26:50.092 +01:00 [INF] HTTP GET /css/site.css responded 304 in 16.3980 ms
+2026-01-23 11:26:50.097 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 1315.9667ms
+2026-01-23 11:26:50.099 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 304 null text/css 38.4463ms
+2026-01-23 11:26:50.396 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:26:50.399 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:26:50.433 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 35.7893ms
+2026-01-23 11:26:50.543 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 145.0442ms
+2026-01-23 11:27:04.443 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery - null null
+2026-01-23 11:27:04.480 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:04.516 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:27:04.618 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:27:04.651 +01:00 [INF] Executed ViewResult - view Requery executed in 35.7865ms.
+2026-01-23 11:27:04.662 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 128.3642ms
+2026-01-23 11:27:04.673 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:04.679 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 206.8008 ms
+2026-01-23 11:27:04.689 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery - 200 null text/html; charset=utf-8 245.6628ms
+2026-01-23 11:27:04.703 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:27:04.702 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:27:04.701 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:27:04.716 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:27:04.726 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 24.3381ms
+2026-01-23 11:27:04.736 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:27:04.737 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:27:04.740 +01:00 [INF] HTTP GET /js/site.js responded 304 in 24.3514 ms
+2026-01-23 11:27:04.769 +01:00 [INF] HTTP GET /css/site.css responded 304 in 32.8692 ms
+2026-01-23 11:27:04.782 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 79.3856ms
+2026-01-23 11:27:04.802 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 304 null text/css 101.8891ms
+2026-01-23 11:27:04.871 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 136.25ms
+2026-01-23 11:27:20.778 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=842123493101 - null null
+2026-01-23 11:27:20.811 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:20.818 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:27:21.860 +01:00 [WRN] No store type was specified for the decimal property 'Amount' on entity type 'TransactionEntity'. This will cause values to be silently truncated if they do not fit in the default precision and scale. Explicitly specify the SQL server column type that can accommodate all the values in 'OnModelCreating' using 'HasColumnType', specify precision and scale using 'HasPrecision', or configure a value converter using 'HasConversion'.
+2026-01-23 11:27:23.973 +01:00 [INF] Executed DbCommand (204ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:27:24.083 +01:00 [INF] Executed DbCommand (28ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:27:24.454 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:27:24.468 +01:00 [INF] Executed ViewResult - view Requery executed in 14.2067ms.
+2026-01-23 11:27:24.475 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 3644.4474ms
+2026-01-23 11:27:24.486 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:24.491 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 3690.5250 ms
+2026-01-23 11:27:24.510 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:27:24.510 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:27:24.510 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:27:24.527 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:27:24.525 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=842123493101 - 200 null text/html; charset=utf-8 3747.5698ms
+2026-01-23 11:27:24.558 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 48.9607ms
+2026-01-23 11:27:24.588 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 78.6888ms
+2026-01-23 11:27:24.572 +01:00 [INF] HTTP GET /css/site.css responded 304 in 45.7076 ms
+2026-01-23 11:27:24.615 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 304 null text/css 106.9611ms
+2026-01-23 11:27:50.199 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=0137217081017 - null null
+2026-01-23 11:27:50.250 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:50.277 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:27:50.359 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:27:51.128 +01:00 [INF] Executed DbCommand (18ms) [Parameters=[@__transactionId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[TransactionReference] = @__transactionId_0
+2026-01-23 11:27:51.383 +01:00 [INF] Start processing HTTP request POST https://myxpresspay.com:6004/api/Payments/VerifyPayment
+2026-01-23 11:27:51.397 +01:00 [INF] Sending HTTP request POST https://myxpresspay.com:6004/api/Payments/VerifyPayment
+2026-01-23 11:27:52.701 +01:00 [INF] Received HTTP response headers after 1297.4055ms - 400
+2026-01-23 11:27:52.706 +01:00 [INF] End processing HTTP request after 1329.1039ms - 400
+2026-01-23 11:27:52.820 +01:00 [INF] Executed DbCommand (28ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:27:52.930 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:27:52.943 +01:00 [INF] Executed ViewResult - view Requery executed in 13.0459ms.
+2026-01-23 11:27:52.949 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 2666.6418ms
+2026-01-23 11:27:52.957 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:27:52.963 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 2717.1140 ms
+2026-01-23 11:27:52.969 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - null null
+2026-01-23 11:27:52.969 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:27:52.969 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:27:52.993 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:27:53.002 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 34.6389ms
+2026-01-23 11:27:53.012 +01:00 [INF] HTTP GET /css/site.css responded 304 in 19.2752 ms
+2026-01-23 11:27:52.998 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 11:27:52.980 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=0137217081017 - 200 null text/html; charset=utf-8 2786.181ms
+2026-01-23 11:27:53.021 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=tDE1MlRmHLq4uEmHWblB6LxtQYoKbMRSUbzy2jX43T0 - 304 null text/css 53.4228ms
+2026-01-23 11:27:53.023 +01:00 [INF] HTTP GET /js/site.js responded 304 in 24.8222 ms
+2026-01-23 11:27:52.986 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:27:53.039 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 69.5404ms
+2026-01-23 11:27:53.081 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 95.1557ms
+2026-01-23 11:27:57.052 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:27:57.059 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 1.8610 ms
+2026-01-23 11:27:57.063 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 11.7119ms
+2026-01-23 11:27:57.070 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:28:43.038 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=0137217081017 - null null
+2026-01-23 11:28:43.071 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:28:43.085 +01:00 [INF] Route matched with {action = "Requery", controller = "Payment"}. Executing controller action with signature System.Threading.Tasks.Task`1[Microsoft.AspNetCore.Mvc.IActionResult] Requery(System.String) on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:28:43.230 +01:00 [INF] Executed DbCommand (24ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:28:43.255 +01:00 [INF] Executed DbCommand (19ms) [Parameters=[@__transactionId_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT TOP(1) [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[TransactionReference] = @__transactionId_0
+2026-01-23 11:28:43.271 +01:00 [INF] Start processing HTTP request POST https://myxpresspay.com:6004/api/Payments/VerifyPayment
+2026-01-23 11:28:43.278 +01:00 [INF] Sending HTTP request POST https://myxpresspay.com:6004/api/Payments/VerifyPayment
+2026-01-23 11:28:43.511 +01:00 [INF] Received HTTP response headers after 227.0916ms - 400
+2026-01-23 11:28:43.519 +01:00 [INF] End processing HTTP request after 248.6273ms - 400
+2026-01-23 11:28:43.552 +01:00 [INF] Executed DbCommand (23ms) [Parameters=[@__AccountNo_0='?' (Size = 4000)], CommandType='"Text"', CommandTimeout='30']
+SELECT [p].[Id], [p].[AccountNo], [p].[Address], [p].[Amount], [p].[CreatedDate], [p].[CustomerName], [p].[Email], [p].[GlobalId], [p].[IsSynced], [p].[MeterNo], [p].[Phone], [p].[RefId], [p].[Status], [p].[SyncedAt], [p].[TransactionReference]
+FROM [PaymentTransactions] AS [p]
+WHERE [p].[AccountNo] = @__AccountNo_0 OR [p].[MeterNo] = @__AccountNo_0
+ORDER BY [p].[CreatedDate] DESC
+2026-01-23 11:28:43.660 +01:00 [INF] Executing ViewResult, running view Requery.
+2026-01-23 11:28:43.712 +01:00 [INF] Executed ViewResult - view Requery executed in 52.5748ms.
+2026-01-23 11:28:43.740 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Requery (PhedPay) in 639.2591ms
+2026-01-23 11:28:43.748 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Requery (PhedPay)'
+2026-01-23 11:28:43.755 +01:00 [INF] HTTP GET /Payment/Requery responded 200 in 684.6241 ms
+2026-01-23 11:28:43.767 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:28:43.781 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:28:43.773 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:28:43.780 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=ymLdoT2u7F03ITf44NAHotgmlADKhQuFn7hrAkScU70 - null null
+2026-01-23 11:28:43.843 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:28:43.768 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/Payment/Requery?AccountNo=0137217081017 - 200 null text/html; charset=utf-8 731.2602ms
+2026-01-23 11:28:43.879 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 60.0624 ms
+2026-01-23 11:28:43.792 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 6.6824 ms
+2026-01-23 11:28:43.958 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 176.8183ms
+2026-01-23 11:28:43.784 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:28:43.966 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 199.2902ms
+2026-01-23 11:28:43.929 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:28:43.985 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:28:43.989 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:28:43.991 +01:00 [INF] HTTP GET /css/site.css responded 200 in 132.5538 ms
+2026-01-23 11:28:43.993 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 14.0696 ms
+2026-01-23 11:28:43.932 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:28:43.998 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=ymLdoT2u7F03ITf44NAHotgmlADKhQuFn7hrAkScU70 - 200 3640 text/css 218.7541ms
+2026-01-23 11:28:44.001 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 216.4854ms
+2026-01-23 11:28:44.003 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 170.8297 ms
+2026-01-23 11:28:44.024 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 254.5413ms
+2026-01-23 11:28:44.054 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:28:44.056 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:28:44.056 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:28:44.083 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:28:44.102 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:28:44.131 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 65.8796 ms
+2026-01-23 11:28:44.167 +01:00 [INF] HTTP GET /js/site.js responded 200 in 71.4780 ms
+2026-01-23 11:28:44.170 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 113.8829ms
+2026-01-23 11:28:44.175 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 121.7835ms
+2026-01-23 11:28:44.180 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 200 1478 text/javascript 126.3369ms
+2026-01-23 11:28:44.056 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:28:44.054 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:28:44.210 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 156.4935ms
+2026-01-23 11:28:44.220 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:28:44.225 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 10.7936 ms
+2026-01-23 11:28:44.227 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 173.6898ms
+2026-01-23 11:28:44.253 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:28:44.265 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:28:44.268 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 7.3469 ms
+2026-01-23 11:28:44.276 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 23.8813ms
+2026-01-23 11:28:54.568 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:28:54.600 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:28:54.607 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:28:54.618 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:28:54.644 +01:00 [INF] Executed ViewResult - view Index executed in 26.4205ms.
+2026-01-23 11:28:54.662 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 46.4014ms
+2026-01-23 11:28:54.672 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:28:54.677 +01:00 [INF] HTTP GET / responded 200 in 77.6240 ms
+2026-01-23 11:28:54.687 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 119.8777ms
+2026-01-23 11:28:54.688 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=ymLdoT2u7F03ITf44NAHotgmlADKhQuFn7hrAkScU70 - null null
+2026-01-23 11:28:54.692 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:28:54.692 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:28:54.708 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:28:54.715 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 24.0176ms
+2026-01-23 11:28:54.727 +01:00 [INF] HTTP GET /css/site.css responded 304 in 19.1970 ms
+2026-01-23 11:28:54.744 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 52.844ms
+2026-01-23 11:28:54.754 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=ymLdoT2u7F03ITf44NAHotgmlADKhQuFn7hrAkScU70 - 304 null text/css 66.1024ms
+2026-01-23 11:29:21.972 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 11:29:21.982 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:29:21.984 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 11:29:21.987 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 11:29:22.019 +01:00 [INF] Executed ViewResult - view Index executed in 32.1503ms.
+2026-01-23 11:29:22.022 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 35.4343ms
+2026-01-23 11:29:22.028 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 11:29:22.031 +01:00 [INF] HTTP GET / responded 200 in 49.8110 ms
+2026-01-23 11:29:22.038 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 66.6159ms
+2026-01-23 11:29:22.043 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso - null null
+2026-01-23 11:29:22.044 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - null null
+2026-01-23 11:29:22.041 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - null null
+2026-01-23 11:29:22.118 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 11:29:22.121 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 11:29:22.197 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 78.9355ms
+2026-01-23 11:29:22.044 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/images/logo.png - null null
+2026-01-23 11:29:22.072 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 11:29:22.072 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - null null
+2026-01-23 11:29:22.257 +01:00 [INF] Sending file. Request path: '/images/logo.png'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\images\logo.png'
+2026-01-23 11:29:22.070 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - null null
+2026-01-23 11:29:22.275 +01:00 [INF] HTTP GET /images/logo.png responded 200 in 28.5487 ms
+2026-01-23 11:29:22.278 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/js/bootstrap.bundle.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\js\bootstrap.bundle.min.js'
+2026-01-23 11:29:22.300 +01:00 [INF] Sending file. Request path: '/lib/jquery/dist/jquery.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery\dist\jquery.min.js'
+2026-01-23 11:29:22.301 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/images/logo.png - 200 54162 image/png 256.7495ms
+2026-01-23 11:29:22.306 +01:00 [INF] HTTP GET /lib/bootstrap/dist/js/bootstrap.bundle.min.js responded 200 in 38.3016 ms
+2026-01-23 11:29:22.311 +01:00 [INF] HTTP GET /lib/jquery/dist/jquery.min.js responded 200 in 26.9642 ms
+2026-01-23 11:29:22.090 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:29:22.328 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/js/bootstrap.bundle.min.js - 200 78474 text/javascript 256.6984ms
+2026-01-23 11:29:22.333 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery/dist/jquery.min.js - 200 89503 text/javascript 263.3511ms
+2026-01-23 11:29:22.337 +01:00 [INF] HTTP GET /css/site.css responded 200 in 267.5332 ms
+2026-01-23 11:29:22.089 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - null null
+2026-01-23 11:29:22.120 +01:00 [INF] Sending file. Request path: '/PhedPay.styles.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\obj\Debug\net8.0\scopedcss\bundle\PhedPay.styles.css'
+2026-01-23 11:29:22.368 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso - 200 3643 text/css 325.427ms
+2026-01-23 11:29:22.376 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation/dist/jquery.validate.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation\dist\jquery.validate.min.js'
+2026-01-23 11:29:22.376 +01:00 [INF] HTTP GET /PhedPay.styles.css responded 200 in 277.1178 ms
+2026-01-23 11:29:22.119 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - null null
+2026-01-23 11:29:22.388 +01:00 [INF] HTTP GET /lib/jquery-validation/dist/jquery.validate.min.js responded 200 in 16.2417 ms
+2026-01-23 11:29:22.396 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/PhedPay.styles.css?v=CyplN--qDsuo0u8wOYpxBgX4NVH9CGxh46XsIoxGsuU - 200 1109 text/css 352.2455ms
+2026-01-23 11:29:22.407 +01:00 [INF] Sending file. Request path: '/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\jquery-validation-unobtrusive\jquery.validate.unobtrusive.min.js'
+2026-01-23 11:29:22.409 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation/dist/jquery.validate.min.js - 200 24604 text/javascript 321.3822ms
+2026-01-23 11:29:22.239 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 118.6282ms
+2026-01-23 11:29:22.420 +01:00 [INF] HTTP GET /lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js responded 200 in 17.7464 ms
+2026-01-23 11:29:22.199 +01:00 [INF] Sending file. Request path: '/lib/bootstrap/dist/css/bootstrap.min.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\lib\bootstrap\dist\css\bootstrap.min.css'
+2026-01-23 11:29:22.262 +01:00 [INF] Sending file. Request path: '/js/site.js'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\js\site.js'
+2026-01-23 11:29:22.433 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js - 200 5831 text/javascript 315.118ms
+2026-01-23 11:29:22.435 +01:00 [INF] HTTP GET /lib/bootstrap/dist/css/bootstrap.min.css responded 200 in 303.4437 ms
+2026-01-23 11:29:22.437 +01:00 [INF] HTTP GET /js/site.js responded 200 in 176.3485 ms
+2026-01-23 11:29:22.447 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/lib/bootstrap/dist/css/bootstrap.min.css - 200 162726 text/css 406.6549ms
+2026-01-23 11:29:22.451 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 200 1478 text/javascript 379.0213ms
+2026-01-23 11:29:22.494 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/favicon.ico - null null
+2026-01-23 11:29:22.512 +01:00 [INF] Sending file. Request path: '/favicon.ico'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\favicon.ico'
+2026-01-23 11:29:22.517 +01:00 [INF] HTTP GET /favicon.ico responded 200 in 11.2405 ms
+2026-01-23 11:29:22.524 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/favicon.ico - 200 5430 image/x-icon 30.8699ms
+2026-01-23 11:29:28.326 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso - null null
+2026-01-23 11:29:28.334 +01:00 [INF] The file /css/site.css was not modified
+2026-01-23 11:29:28.337 +01:00 [INF] HTTP GET /css/site.css responded 304 in 2.9256 ms
+2026-01-23 11:29:28.345 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso - 304 null text/css 20.4129ms
+2026-01-23 11:29:28.359 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - null null
+2026-01-23 11:29:28.367 +01:00 [INF] HTTP GET /.well-known/appspecific/com.chrome.devtools.json responded 404 in 0.4637 ms
+2026-01-23 11:29:28.371 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json - 404 0 null 14.2075ms
+2026-01-23 11:29:28.378 +01:00 [INF] Request reached the end of the middleware pipeline without being handled by application code. Request path: GET https://localhost:7251/.well-known/appspecific/com.chrome.devtools.json, Response status code: 404
+2026-01-23 11:39:51.088 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso&__browserLink_refresh=c7cbe1c2414e4543bbc0597f469fe590 - null null
+2026-01-23 11:39:51.169 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 11:39:51.177 +01:00 [INF] HTTP GET /css/site.css responded 200 in 70.8233 ms
+2026-01-23 11:39:51.185 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=i-ueOH7SDZzxRCchlqM5mXRHlIPU-IO0ZgYfx7spUso&__browserLink_refresh=c7cbe1c2414e4543bbc0597f469fe590 - 200 3227 text/css 97.7768ms
+2026-01-23 13:33:41.250 +01:00 [INF] User profile is available. Using 'C:\Users\edesiri.uduvwurode\AppData\Local\ASP.NET\DataProtection-Keys' as key repository and Windows DPAPI to encrypt keys at rest.
+2026-01-23 13:33:42.130 +01:00 [INF] Now listening on: https://localhost:7251
+2026-01-23 13:33:42.136 +01:00 [INF] Now listening on: http://localhost:5214
+2026-01-23 13:33:42.230 +01:00 [INF] Application started. Press Ctrl+C to shut down.
+2026-01-23 13:33:42.231 +01:00 [INF] Hosting environment: Development
+2026-01-23 13:33:42.232 +01:00 [INF] Content root path: C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay
+2026-01-23 13:33:42.992 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/ - null null
+2026-01-23 13:33:43.190 +01:00 [INF] Executing endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 13:33:43.229 +01:00 [INF] Route matched with {action = "Index", controller = "Payment"}. Executing controller action with signature Microsoft.AspNetCore.Mvc.IActionResult Index() on controller PhedPay.Controllers.PaymentController (PhedPay).
+2026-01-23 13:33:43.524 +01:00 [INF] Executing ViewResult, running view Index.
+2026-01-23 13:33:43.714 +01:00 [INF] Executed ViewResult - view Index executed in 198.8777ms.
+2026-01-23 13:33:43.723 +01:00 [INF] Executed action PhedPay.Controllers.PaymentController.Index (PhedPay) in 490.2747ms
+2026-01-23 13:33:43.731 +01:00 [INF] Executed endpoint 'PhedPay.Controllers.PaymentController.Index (PhedPay)'
+2026-01-23 13:33:43.742 +01:00 [INF] HTTP GET / responded 200 in 602.8502 ms
+2026-01-23 13:33:43.750 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/css/site.css?v=R7_rZ5KCz97Vy97EzFdBENY4jF5ZiailaC3CrFkTobE - null null
+2026-01-23 13:33:43.766 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/ - 200 null text/html; charset=utf-8 793.6842ms
+2026-01-23 13:33:43.792 +01:00 [INF] Sending file. Request path: '/css/site.css'. Physical path: 'C:\Users\edesiri.uduvwurode\source\repos\Payments\PhedPay\wwwroot\css\site.css'
+2026-01-23 13:33:43.793 +01:00 [INF] HTTP GET /css/site.css responded 200 in 21.7056 ms
+2026-01-23 13:33:43.795 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/css/site.css?v=R7_rZ5KCz97Vy97EzFdBENY4jF5ZiailaC3CrFkTobE - 200 3227 text/css 44.8157ms
+2026-01-23 13:33:43.994 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - null null
+2026-01-23 13:33:44.004 +01:00 [INF] The file /js/site.js was not modified
+2026-01-23 13:33:44.007 +01:00 [INF] HTTP GET /js/site.js responded 304 in 3.1822 ms
+2026-01-23 13:33:44.010 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/js/site.js?v=LqnkdkPXpII8jcnTDPEB4Dao6Bq5ovtOXYSTcHUqNog - 304 null text/javascript 16.0959ms
+2026-01-23 13:33:44.021 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - null null
+2026-01-23 13:33:44.025 +01:00 [INF] Request starting HTTP/2 GET https://localhost:7251/_vs/browserLink - null null
+2026-01-23 13:33:44.038 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_framework/aspnetcore-browser-refresh.js - 200 16499 application/javascript; charset=utf-8 22.0586ms
+2026-01-23 13:33:44.115 +01:00 [INF] Request finished HTTP/2 GET https://localhost:7251/_vs/browserLink - 200 null text/javascript; charset=UTF-8 90.2125ms
