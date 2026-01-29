@@ -683,7 +683,7 @@ namespace PhedPay.Controllers
 
             var content = new StringContent(JsonConvert.SerializeObject(requestPayload), Encoding.UTF8, "application/json");
 
-           // var response = await client.PostAsync("https://cashiers3.phed.com.ng/dlenhanceapi/Collection/GetTransactionInfo", content);
+           // var response = await client.PostAsync("https://collections.phed.ng/dlenhanceapi/Collection/GetTransactionInfo", content);
             string baseUrl = _configuration["baseAPI"];
             string endpoint = $"{baseUrl}Collection/GetTransactionInfo";
             var response = await client.PostAsync(endpoint, content);
