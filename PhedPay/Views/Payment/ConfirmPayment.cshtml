@@ -396,20 +396,22 @@
                 console.log(response);
             }
             //auto population of amount on the form
-            document.getElementById('PaymentPurpose').addEventListener('change', function() {
+                 document.getElementById('PaymentPurpose').addEventListener('change', function() {
             var selectedOption = this.options[this.selectedIndex];
             var amountInput = document.getElementById('Amount');
 
             if (this.value != '14') {
-                // Energy selected - keep current amount or reset
-                // Extract amount from option text (after #)
+                // Extract amount from option text (after "Total of")
                 var optionText = selectedOption.text;
-                var amount = optionText.split('#')[1];
+                var match = optionText.match(/Total of\s+([\d.]+)/);
 
-                if (amount) {
-                    var totalAmount = parseFloat(amount) + 50;
+                if (match && match[1]) {
+                    var totalAmount = parseFloat(match[1]) + 50;
                     amountInput.value = totalAmount.toFixed(2);
                 }
+            } else {
+                // Energy selected - clear or set default
+                amountInput.value = '';
             }
         });
 </script>

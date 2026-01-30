@@ -107,9 +107,7 @@
         </div>
     </div>
 </div>
-
-
-
+<!-- Receipt Modal -->
 <div class="modal fade" id="receiptModal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered">
         <div class="modal-content">
@@ -118,47 +116,64 @@
                 <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-
                 <div id="receiptLoading" class="text-center py-4">
                     <div class="spinner-border text-primary" role="status"></div>
                     <p class="mt-2">Fetching receipt details...</p>
                 </div>
 
                 <div id="receiptContent" class="d-none">
-                    <div class="text-center mb-3">
-                        <h6 class="text-muted">TOKEN</h6>
-                        <h2 id="r_token" class="fw-bold text-success" style="letter-spacing: 2px;"></h2>
-                        <span id="r_units" class="badge bg-secondary"></span>
+                    <!-- Token Section (paymentpurpose == 14) -->
+                    <div id="tokenSection">
+                        <div class="text-center mb-3">
+                            <h6 class="text-muted">TOKEN</h6>
+                            <h2 id="r_token" class="fw-bold text-success" style="letter-spacing: 2px;"></h2>
+                            <span id="r_units" class="badge bg-secondary"></span>
+                        </div>
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Amount:</span> <strong id="r_amount"></strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Meter No:</span> <span id="r_meter"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Date:</span> <span id="r_date"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Receipt No:</span> <span id="r_receiptNo" class="text-muted small"></span>
+                            </li>
+                        </ul>
                     </div>
 
-                    <ul class="list-group list-group-flush">
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Amount:</span> <strong id="r_amount"></strong>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Meter No:</span> <span id="r_meter"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Date:</span> <span id="r_date"></span>
-                        </li>
-                        <li class="list-group-item d-flex justify-content-between">
-                            <span>Receipt No:</span> <span id="r_receiptNo" class="text-muted small"></span>
-                        </li>
-                    </ul>
+                    <!-- Details Section (paymentpurpose != 14) -->
+                    <div id="detailsSection" class="d-none">
+                        <ul class="list-group list-group-flush">
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Total Amount:</span> <strong id="r_amount_other"></strong>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Meter No:</span> <span id="r_meter_other"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Date:</span> <span id="r_date_other"></span>
+                            </li>
+                            <li class="list-group-item d-flex justify-content-between">
+                                <span>Receipt No:</span> <span id="r_receiptNo_other" class="text-muted small"></span>
+                            </li>
+                        </ul>
+                        <hr>
+                        <h6 class="text-muted mb-2">Breakdown</h6>
+                        <ul id="detailsList" class="list-group list-group-flush"></ul>
+                    </div>
                 </div>
 
                 <div id="receiptError" class="alert alert-danger d-none">
                     Could not retrieve receipt details. Please try downloading directly.
-                    <button id="retryBtn"
-                            class="btn btn-lg btn-danger text-white"
-                            onclick="retryFailedTransaction()">
+                    <button id="retryBtn" class="btn btn-lg btn-danger text-white" onclick="retryFailedTransaction()">
                         <span id="retryBtnText">Retry Token Generation</span>
                         <span id="retryBtnSpinner" class="spinner-border spinner-border-sm d-none ms-2"></span>
                     </button>
-
-
                 </div>
-
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -169,7 +184,6 @@
         </div>
     </div>
 </div>
-
 
 <script>
     let currentTxId = null;
@@ -193,28 +207,50 @@
                 if (!response.ok) throw new Error("Network response was not ok");
                 return response.json();
             })
-            .then(data => {
-                // The API returns an array, take the first item
-                if (data && data.length > 0) {
-                    var r = data[0];
+           .then(response => {
+        // Access the nested data array
+         if (response.data && response.data.length > 0) {
+        var r = response.data[0];
 
-                    // 4. Populate Fields
-                    document.getElementById('r_token').innerText = r.TOKENDESC || "N/A";
-                    document.getElementById('r_units').innerText = (r.UNITSACTUAL || "0") + " kwh";
-                    document.getElementById('r_amount').innerText = "NGN " + r.AMOUNT;
-                    document.getElementById('r_meter').innerText = r.METER_NO;
-                    document.getElementById('r_date').innerText = r.PAYMENTDATETIME;
-                    document.getElementById('r_receiptNo').innerText = r.RECEIPTNUMBER;
+        if (r.paymentpurpose == '14') {
+            document.getElementById('r_token').innerText = r.tokendesc || "N/A";
+            document.getElementById('r_units').innerText = (r.unitsactual || "0") + " kwh";
+            document.getElementById('r_amount').innerText = "NGN " + r.amount;
+            document.getElementById('r_meter').innerText = r.meterno;
+            document.getElementById('r_date').innerText = r.paymentdatetime;
+            document.getElementById('r_receiptNo').innerText = r.receiptnumber;
+        } else {
+            // Hide token section, show details
+            document.getElementById('tokenSection').classList.add('d-none');
+            document.getElementById('detailsSection').classList.remove('d-none');
 
-                    // 5. Show Content
-                    document.getElementById('receiptLoading').classList.add('d-none');
-                    document.getElementById('receiptContent').classList.remove('d-none');
-                } else {
-                    throw new Error("Empty data");
-                }
+            document.getElementById('r_amount_other').innerText = "NGN " + r.amount;
+            document.getElementById('r_meter_other').innerText = r.meterno;
+            document.getElementById('r_date_other').innerText = r.paymentdatetime;
+            document.getElementById('r_receiptNo_other').innerText = r.receiptnumber;
+
+            // Populate details breakdown
+            const detailsList = document.getElementById('detailsList');
+            detailsList.innerHTML = '';
+            if (r.details && r.details.length > 0) {
+                r.details.forEach(item => {
+                    detailsList.innerHTML += `
+                        <li class="list-group-item d-flex justify-content-between">
+                            <span>${item.head}:</span> <strong>NGN ${item.amount}</strong>
+                        </li>`;
+                });
+            }
+        }
+
+        document.getElementById('receiptLoading').classList.add('d-none');
+        document.getElementById('receiptContent').classList.remove('d-none');
+    } else {
+        throw new Error("Empty data");
+    }
             })
             .catch(error => {
                 console.error('Error:', error);
+                alert('Error:' . error);
                 document.getElementById('receiptLoading').classList.add('d-none');
                 document.getElementById('receiptError').classList.remove('d-none');
             });

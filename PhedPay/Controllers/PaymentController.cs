@@ -83,7 +83,7 @@ namespace PhedPay.Controllers
                     ViewBag.FactorAmount = customerData.factor_amount;
 
                     //from previous page
-                    ViewBag.MeterNo = model.MeterNo;
+                    //ViewBag.MeterNo = model.MeterNo;
                     ViewBag.PhoneNumber = model.PhoneNumber;
                     ViewBag.Email = model.Email;
 
@@ -311,6 +311,8 @@ namespace PhedPay.Controllers
 
 
             var content = new StringContent(JsonConvert.SerializeObject(notifyPayload), Encoding.UTF8, "application/json");
+
+            var tokex = content.ReadAsStringAsync().Result;
             string token = "";
 
             try
