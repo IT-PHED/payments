@@ -114,7 +114,7 @@ namespace PhedPay.Controllers
                 // Do NOT set GlobalId (SQL handles it, or set Guid.NewGuid() if you prefer)
                 TransactionReference = txId, // Store the "Account_Time" here
                 AccountNo = AccountNo,
-                MeterNo = meterNo,
+                MeterNo = meterNo ?? AccountNo,
                 RefId = Guid.NewGuid(),
                 Email = email,
                 Phone = phone,

@@ -219,7 +219,7 @@
             document.getElementById('r_meter').innerText = r.meterno;
             document.getElementById('r_date').innerText = r.paymentdatetime;
             document.getElementById('r_receiptNo').innerText = r.receiptnumber;
-        } else {
+        } else if(r.paymentpurpose != null) {
             // Hide token section, show details
             document.getElementById('tokenSection').classList.add('d-none');
             document.getElementById('detailsSection').classList.remove('d-none');
@@ -240,7 +240,18 @@
                         </li>`;
                 });
             }
-        }
+            }  else {
+        // paymentpurpose is null - show basic receipt info only
+        document.getElementById('tokenSection').classList.add('d-none');
+        document.getElementById('detailsSection').classList.remove('d-none');
+
+        document.getElementById('r_amount_other').innerText = "NGN - Could not fectch";
+        document.getElementById('r_meter_other').innerText = r.meterno || "N/A";
+        document.getElementById('r_date_other').innerText = " Could not fectch";
+        document.getElementById('r_receiptNo_other').innerText = " Could not fectch";
+
+        document.getElementById('detailsList').innerHTML = '<li class="list-group-item text-muted">No active payment/No breakdown available</li>';
+    }
 
         document.getElementById('receiptLoading').classList.add('d-none');
         document.getElementById('receiptContent').classList.remove('d-none');
