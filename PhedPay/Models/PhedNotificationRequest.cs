@@ -36,6 +36,7 @@
         public string InstitutionName { get; set; }
         public string CollectionsAccount { get; set; }
         public string InstitutionId { get; set; }
+        public string PurposeId { get; set; }
     }
 }
 

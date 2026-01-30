@@ -69,53 +69,40 @@ namespace PhedPay.Controllers
             if (response.IsSuccessStatusCode)
             {
                 var responseString = await response.Content.ReadAsStringAsync();
+                var customerData = JsonConvert.DeserializeObject<CustomerResponse>(responseString);
 
-                // 1. Deserialize as a List because the JSON starts with '['
-                var customerList = JsonConvert.DeserializeObject<List<dynamic>>(responseString);
-
-                if (customerList != null && customerList.Count > 0)
+                if (customerData?.status == "SUCCESS")
                 {
-                    var data = customerList[0]; // Access the first object in the array
+                    ViewBag.CustomerName = customerData.customer_name;
+                    ViewBag.AccountNo = customerData.customer_no;
+                    ViewBag.MeterNo = customerData.meter_no;
+                    ViewBag.Address = customerData.address;
+                    ViewBag.AccountType = customerData.customer_type;
+                    ViewBag.TotalBill = customerData.total_bill;
+                    ViewBag.Arrear = customerData.arrear;
+                    ViewBag.FactorAmount = customerData.factor_amount;
 
-                    // 2. Map fields based on the ALL CAPS keys in your JSON
-                    ViewBag.CustomerName = (string)data.CONS_NAME;
-                    ViewBag.AccountNo = (string)data.CUSTOMER_NO;
-                    ViewBag.MeterNo = (string)data.METER_NO;
-                    ViewBag.Address = (string)data.ADDRESS;
-                    ViewBag.FactorAmount = (string)data.FACTOR_AMOUNT;
-
-                    // 3. Logic to deduce PREPAID vs POSTPAID
-                    string rawType = (string)data.CONS_TYPE;
-                    if (!string.IsNullOrEmpty(rawType))
-                    {
-                        if (rawType.ToUpper().Contains("PREPAID"))
-                        {
-                            ViewBag.AccountType = "PREPAID";
-                        }
-                        else if (rawType.ToUpper().Contains("POSTPAID"))
-                        {
-                            ViewBag.AccountType = "POSTPAID";
-                        }
-                        else
-                        {
-                            ViewBag.AccountType = "UNKNOWN";
-                        }
-                    }
-
-                    // 4. Pass through the user's original inputs
-                    ViewBag.Phone = model.PhoneNumber;
+                    //from previous page
+                    //ViewBag.MeterNo = model.MeterNo;
+                    ViewBag.PhoneNumber = model.PhoneNumber;
                     ViewBag.Email = model.Email;
-                    ViewBag.Amount = model.Amount;
 
-                    return View("ConfirmPayment");
+                    // Handle payables (can be null or empty)
+                    if (customerData.payables?.Any() == true)
+                    {
+                        ViewBag.Payables = customerData.payables;
+                    }
                 }
-            }
+            
+            return View("ConfirmPayment");
+                }
+            
             ModelState.AddModelError("", "Could not validate customer details.");
             return View("Index", model);
         }
         // 3. Initialize Payment (Proceed clicked)
         [HttpPost]
-        public async Task<IActionResult> InitializePayment(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address)
+        public async Task<IActionResult> InitializePayment(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address, string PaymentPurpose)
         {
             //var txId = Guid.NewGuid().ToString();
             var txId = $"{AccountNo}_{DateTime.Now.ToString("HHmmssffffff")}";
@@ -127,7 +114,7 @@ namespace PhedPay.Controllers
                 // Do NOT set GlobalId (SQL handles it, or set Guid.NewGuid() if you prefer)
                 TransactionReference = txId, // Store the "Account_Time" here
                 AccountNo = AccountNo,
-                MeterNo = meterNo,
+                MeterNo = meterNo ?? AccountNo,
                 RefId = Guid.NewGuid(),
                 Email = email,
                 Phone = phone,
@@ -135,7 +122,8 @@ namespace PhedPay.Controllers
                 CustomerName = customerName,
                 Address = address,
                 CreatedDate = DateTime.Now,
-                Status = "Pending"
+                Status = "Pending",
+                PaymentPurpose = PaymentPurpose
             };
             _context.Transactions.Add(transaction);
             await _context.SaveChangesAsync();
@@ -316,12 +304,17 @@ namespace PhedPay.Controllers
                 IsReversal = "False",
 
                 SettlementDate = now,
-                Teller = "PHED WebTeller"
+                Teller = "PHED WebTeller",
+                PurposeId = tx.PaymentPurpose
+
             };
 
 
             var content = new StringContent(JsonConvert.SerializeObject(notifyPayload), Encoding.UTF8, "application/json");
-            var xyz = await content.ReadAsStringAsync();
+
+
+            var tokex = content.ReadAsStringAsync().Result;
+
             string token = "";
 
             try
@@ -329,6 +322,7 @@ namespace PhedPay.Controllers
                 string baseUrl = _configuration["baseAPI"];
                 string endpoint = $"{baseUrl}Collection/NotifyPayment";
                 var resp = await client.PostAsync(endpoint, content);
+
 
                 var output = resp;
                 var errorBody = await resp.Content.ReadAsStringAsync();
@@ -699,7 +693,7 @@ namespace PhedPay.Controllers
             return BadRequest();
         }
         [HttpPost]
-        public async Task<IActionResult> InitializeGlobalPay(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address)
+        public async Task<IActionResult> InitializeGlobalPay(string AccountNo, string meterNo, string email, string phone, decimal amount, string customerName, string address, string PaymentPurpose)
         {
             // 1. Generate Transaction Reference
             var txRef = $"GP_{DateTime.Now:yyyyMMddHHmmss}_{AccountNo}";
@@ -777,8 +771,9 @@ namespace PhedPay.Controllers
                     
                     var result = JsonConvert.DeserializeObject<GlobalPayInitResponse>(responseString);
 
-                    
+
                     if (result != null && result.isSuccessful && result.data != null)
+                    //if (result == null)
                     {
                       var transaction = new TransactionEntity
                         {
@@ -791,7 +786,8 @@ namespace PhedPay.Controllers
                             CustomerName = customerName,
                             Address = address,
                             Status = "Pending",
-                            CreatedDate = DateTime.Now
+                            CreatedDate = DateTime.Now,
+                            PaymentPurpose = PaymentPurpose
                         };
 
                         _context.Transactions.Add(transaction);

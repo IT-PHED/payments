@@ -25,6 +25,7 @@ namespace PhedPay.Models
         public bool IsSynced { get; set; }
         public DateTime? SyncedAt { get; set; }
         public DateTime CreatedDate { get; set; }
+        public string PaymentPurpose { get; set; } 
     }
 }
 

@@ -8,6 +8,6 @@ namespace PhedPay.Models
         [Required] public string MeterNo { get; set; }
         [Required] public string PhoneNumber { get; set; }
         [Required, EmailAddress] public string Email { get; set; }
-        [Required] public decimal Amount { get; set; }
+       // [Required] public decimal Amount { get; set; }
     }
 }
