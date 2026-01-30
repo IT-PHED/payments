@@ -321,6 +321,7 @@ namespace PhedPay.Controllers
 
 
             var content = new StringContent(JsonConvert.SerializeObject(notifyPayload), Encoding.UTF8, "application/json");
+            var xyz = await content.ReadAsStringAsync();
             string token = "";
 
             try
